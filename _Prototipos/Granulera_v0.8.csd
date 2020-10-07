@@ -55,11 +55,13 @@ label bounds(722, 362, 70, 19) fontcolour(255, 255, 255, 255) text("L F O")
 label bounds(696, 108, 117, 21) fontcolour(255, 255, 255, 255) text("F I L T E R")
 label bounds(638, 134, 115, 18) fontcolour(255, 255, 255, 255) text("Filter Type")
 combobox bounds(766, 132, 87, 22) text("Low Pass", "High Pass", "Band Pass") fontcolour(188, 151, 49, 255) channel("FilterSelection")
-rslider bounds(604, 160, 100, 70) range(0.001, 1, 1, 0.35, 0.001) text("Frequency") channel("FilterFreq") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(706, 160, 100, 69) range(0.001, 1, 0.001, 0.35, 0.001) text("Start/End Freq") channel("FilterRange") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(562, 160, 100, 70) range(0.001, 1, 1, 0.35, 0.001) text("Frequency") channel("FilterFreq") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(664, 160, 100, 69) range(0.001, 1, 0.001, 0.35, 0.001) text("Start/End Freq") channel("FilterRange") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
 
-rslider bounds(818, 160, 100, 70) range(1, 1000, 1, 0.2, 0.01) text("Resonance") channel("FilterReson") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(768, 158, 100, 70) range(1, 100, 1, 0.5, 0.1) text("Resonance") channel("FilterReson") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(868, 158, 100, 70) range(1, 5000, 1, 0.5, 0.1) text("Bandwidth") channel("FilterBW") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+
 label bounds(664, 238, 160, 17) fontcolour(255, 255, 255, 255) text("Filter Envelope")
 rslider bounds(572, 260, 100, 70) range(0.01, 10.01, 0, 0.5, 0.01) text("Attack") channel("FilterAttack") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 rslider bounds(672, 258, 100, 70) range(0.01, 10.01, 0.01, 0.5, 0.01) text("Decay") channel("FilterDecay") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
@@ -79,9 +81,9 @@ hslider bounds(984, 240, 200, 36) range(0, 1, 0, 1, 0.01) channel("DelayFeedback
 
 
 //GLOBALS
-label bounds(1024, 290, 103, 19) fontcolour(255, 255, 255, 255) text("G L O B A L")
+label bounds(1024, 326, 103, 19) fontcolour(255, 255, 255, 255) text("G L O B A L")
 hslider bounds(976, 390, 200, 36) range(0, 1, 0.5, 1, 0.01) text("Stereo Pan") channel("GlobalPan") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-hslider bounds(976, 318, 200, 36) range(0, 1, 1, 1, 0.01) text("Volume") channel("GlobalVolume") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255) fontcolour(255, 255, 255, 255)
+hslider bounds(976, 354, 200, 36) range(0, 1, 1, 1, 0.01) text("Volume") channel("GlobalVolume") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255) fontcolour(255, 255, 255, 255)
 ;hslider bounds(976, 354, 200, 36) range(0, 1, 0, 1, 0.01) text("Dry/Wet") channel("DryWet") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255) fontcolour(255, 255, 255, 255)
 
 label bounds(998, 484, 160, 19) fontcolour(255, 255, 255, 255) text("Amp Envelope")
@@ -168,6 +170,7 @@ instr Grains;Grains
     kFilterFreq chnget "FilterFreq"
     iFilterRange chnget "FilterRange"
     kFilterReson chnget "FilterReson"
+    kFilterBW chnget "FilterBW"
     iFilterType chnget "FilterSelection"
     iFilterAttack chnget "FilterAttack"
     iFilterDecay chnget "FilterDecay"
@@ -200,8 +203,8 @@ instr Grains;Grains
     iFreqMIDI cpsmidi
     aAmpEnv mxadsr iAttack, iDecay, iSustain, iRelease
     
-    icc1 init 1
-    kcc1 chanctrl 1, 1, 0, 1
+    kcc1 init 1
+    kcc1 chanctrl 1, 1, 0.001, 1
         
 //PORT:
     kOsc1Vol port kOsc1Vol, 0.02
@@ -217,6 +220,7 @@ instr Grains;Grains
     kFilterReson port kFilterReson, 0.02
 
     kcc1 port kcc1, 0.1
+  
 
     kGlobalPan port kGlobalPan, 0.02
     gkGlobalVol port gkGlobalVol, 0.1
@@ -253,23 +257,16 @@ instr Grains;Grains
 
 //FILTERING: 
 
-    //Envelope:
-    /*aFilterEnv mxadsr iFilterAttack, iFilterDecay, iFilterSustain, iFilterRelease
-    kFilterFreqTotal = aFilterEnv * kFilterFreq * kcc1*/
-    
-
-    ;iFilterStartFreq = abs(iFilterFreq - iFilterRange)
-    /*if  iFilterAttack > 0 then
-        kFilterEnv  expsegr iFilterRange, iFilterAttack, iFilterFreq, iFilterDecay, iFilterFreq * iFilterSustain, iFilterRelease, iFilterRange
-    else
-        kFilterEnv  expsegr iFilterFreq, iFilterDecay,iFilterFreq * iFilterSustain, iFilterRelease, iFilterRange
-    endif*/
-    
+    //Envelope:    
     if iFilterAttack > 0.01 then
         kFilterEnv1  expsegr iFilterRange, iFilterAttack, 1 * iFilterFreq, iFilterDecay, 1 * iFilterSustain * iFilterFreq, iFilterRelease, iFilterRange
     else
         kFilterEnv1  expsegr iFilterFreq, iFilterDecay, 1 * iFilterSustain * iFilterFreq, iFilterRelease, iFilterFreq
     endif
+    
+    /*kFilterFreqControl = kcc1 * kFilterFreq
+    kFilterEnv scale kFilterEnv1, kFilterFreqControl, 0
+    printk 0.5, kFilterEnv*/
     
     kFilterTotal ntrpol 0, 20000, kFilterEnv1 * kFilterFreq * kcc1
     aFilterEnv interp kFilterTotal
@@ -280,7 +277,7 @@ instr Grains;Grains
 
     //Filter type selection
     if iFilterType == 3 then
-        aSigFilter butterbp aGrainSum, kFilterFreqTotal, kFilterReson
+        aSigFilter butterbp aGrainSum, kFilterFreqTotal, kFilterBW
     else
         kFilterReson limit kFilterReson, 1, 100
         aSigFilter bqrez aGrainSum, kFilterFreqTotal, kFilterReson, iFilterType -1   
