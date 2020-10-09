@@ -39,17 +39,17 @@ rslider bounds(234, 460, 94, 70) range(0.1, 10, 1, 1, 0.1) channel("FrequencyVar
 rslider bounds(296, 236, 100, 70) range(0, 1000, 0, 0.3, 0.01) text("Pitch Variation") channel("PitchVariation") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 //Duration
 rslider bounds(296, 162, 100, 70) range(0.01, 1, 0.1, 0.5, 0.01) channel("GrainDuration") text("Grain Duration") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(358, 378, 100, 70) range(0, 1, 0, 0.5, 0.01) channel("DurationVariationRange") text("Duration Range") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(354, 466, 100, 70) range(0.1, 10, 1, 1, 0.1) channel("DurationVariationRate") text("Duration Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(332, 376, 100, 70) range(0, 1, 0, 0.5, 0.01) channel("DurationVariationRange") text("Duration Range") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(332, 460, 100, 70) range(0.1, 10, 1, 1, 0.1) channel("DurationVariationRate") text("Duration Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 //Density
 rslider bounds(400, 164, 100, 70) range(0.5, 100, 20, 0.5, 0.1) channel("GrainDensity") text("Grain Density") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(480, 380, 100, 70) range(0, 100, 0, 0.5, 0.1) channel("DensityVariationRange") text("Density Range") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(472, 458, 100, 70) range(0.1, 10, 1, 1, 0.1) channel("DensityVariationRate") text("Density Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(434, 376, 100, 70) range(0, 100, 0, 0.5, 0.1) channel("DensityVariationRange") text("Density Range") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(436, 460, 100, 70) range(0.1, 10, 1, 1, 0.1) channel("DensityVariationRate") text("Density Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 //Phase
 rslider bounds(400, 236, 100, 70) range(0, 1, 0, 1, 0.05) text("Phase Variation") channel("PhaseVariation") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
 //LFOs
-label bounds(722, 362, 70, 19) fontcolour(255, 255, 255, 255) text("L F O")
+label bounds(720, 350, 70, 21) fontcolour(255, 255, 255, 255) text("L F O")
 
 //FILTERS
 label bounds(696, 108, 117, 21) fontcolour(255, 255, 255, 255) text("F I L T E R")
@@ -79,6 +79,25 @@ hslider bounds(984, 170, 200, 36) range(0.05, 10, 0, 0.4, 0.01) channel("DelayTi
 hslider bounds(984, 204, 200, 36) range(0.05, 10, 0, 0.4, 0.01) channel("DelayTimeRight") text("Time Right") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 hslider bounds(984, 240, 200, 36) range(0, 1, 0, 1, 0.01) channel("DelayFeedback") text("Feedback") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
+//LFO
+label bounds(596, 494, 141, 18) fontcolour(255, 255, 255, 255) text("Filter Frequency")
+rslider bounds(658, 514, 100, 70) range(0, 2, 0, 1, 0.01) text("Range") channel("LfoFilterRange") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(560, 514, 100, 70) range(0, 10, 0, 0.5, 0.01) text("Frequency") channel("LfoFilterFreq") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+label bounds(772, 492, 141, 18) fontcolour(255, 255, 255, 255) text("Amplitude")
+rslider bounds(856, 516, 100, 70) range(0, 0.5, 0, 1, 0.01) text("Range") channel("LfoAmpRange") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(756, 514, 100, 70) range(0, 10, 0, 0.5, 0.01) text("Frequency") channel("LfoAmpFreq") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+label bounds(588, 382, 141, 18) fontcolour(255, 255, 255, 255) text("Grain Duration")
+rslider bounds(646, 402, 100, 70) range(0, 0.7, 0, 0.5, 0.01) text("Range") channel("LfoDurRange") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(546, 404, 100, 70) range(0, 10, 0, 0.5, 0.01) text("Frequency") channel("LfoDurFreq") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+label bounds(792, 378, 141, 18) fontcolour(255, 255, 255, 255) text("Grain Density")
+rslider bounds(864, 398, 100, 70) range(0.5, 100, 0, 0.5, 0.01) text("Range") channel("LfoDensityRange") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(762, 398, 100, 70) range(0, 10, 0, 0.5, 0.01) text("Frequency") channel("LfoDensityFreq") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+label bounds(580, 586, 141, 18) fontcolour(255, 255, 255, 255) text("Pannning")
+rslider bounds(640, 602, 100, 72) range(0, 1, 0, 1, 0.01) text("Range") channel("LfoPanRange") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(534, 604, 100, 70) range(0, 10, 0, 0.5, 0.01) text("Frequency") channel("LfoPanFreq") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+label bounds(790, 588, 141, 18) fontcolour(255, 255, 255, 255) text("Tuning")
+rslider bounds(856, 608, 100, 70) range(0, 1200, 0, 0.35, 0.01) text("Range") channel("LfoTuningRange") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(756, 608, 100, 70) range(0, 15, 0, 0.5, 0.01) text("Frequency") channel("LfoTuningFreq") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
 //GLOBALS
 label bounds(1024, 326, 103, 19) fontcolour(255, 255, 255, 255) text("G L O B A L")
@@ -91,8 +110,7 @@ hslider bounds(978, 504, 200, 36) range(0.01, 10, 0.1, 0.5, 0.01) text("Attack")
 hslider bounds(978, 538, 200, 36) range(0.01, 10, 0.1, 0.5, 0.01) text("Decay") channel("AmpDecay") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 hslider bounds(976, 572, 200, 36) range(0.0001, 1, 1, 1, 0.01) text("Sustain") channel("AmpSustain") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 hslider bounds(976, 606, 200, 36) range(0.01, 10, 0.1, 1, 0.01) text("Release") channel("AmpRelease") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-hslider bounds(976, 426, 200, 36) range(-1200, 1200, 0, 1, 0.01) channel("GlobalTuning") text("Tuning") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-
+hslider bounds(976, 426, 200, 36) range(-1200, 1200, 0, 0.5, 0.01) channel("GlobalTuning") text("Tuning") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
 </Cabbage>
 <CsoundSynthesizer>
@@ -104,12 +122,11 @@ ksmps = 32
 nchnls = 2
 0dbfs = 1
 //TO DO:
-;Make filter freq fully controllable during performance
 ;FIX OSCILLATOR 3
-;CC1 control for filter frequency is tied to ffrequency knob
-;Add LFOs to key parameters 
+;Make filter freq fully controllable during performance
+;CC1 control for filter frequency is tied to frequency knob
+;Add LFO to filter
 ;Pitch Bend
-
 
 //BACKLOG:
 ;Fazer um variante com playback de arquivo de audio
@@ -185,6 +202,21 @@ instr Grains;Grains
     kGlobalPan chnget "GlobalPan"
     gkGlobalVol chnget "GlobalVolume"
     kGlobalTuning chnget "GlobalTuning"
+    //LFO
+    kLfoFilterFreq chnget "LfoFitlerFreq"
+    kLfoFilterRange chnget "LfoFilterRange"
+    kLfoAmpRange chnget "LfoAmpRange"
+    kLfoAmpFreq chnget "LfoAmpFreq"
+    
+    kLfoDensityRange chnget "LfoDensityRange"
+    kLfoDensityFreq chnget "LfoDensityFreq"
+    kLfoDurRange chnget "LfoDurRange"
+    kLfoDurFreq chnget "LfoDurFreq"
+    
+    kLfoPanRange chnget "LfoPanRange"
+    kLfoPanFreq chnget "LfoPanFreq"
+    kLfoTuningRange chnget "LfoTuningRange"
+    kLfoTuningFreq chnget "LfoTuningFreq"
 
 //OSCILLATORS:
     kFn1 = kFn1 + 10 //Offset for waveform f-table numbers
@@ -203,7 +235,6 @@ instr Grains;Grains
     iFreqMIDI cpsmidi
     aAmpEnv mxadsr iAttack, iDecay, iSustain, iRelease
     
-    kcc1 init 1
     kcc1 chanctrl 1, 1, 0.001, 1
         
 //PORT:
@@ -221,23 +252,25 @@ instr Grains;Grains
 
     kcc1 port kcc1, 0.1
   
-
     kGlobalPan port kGlobalPan, 0.02
     gkGlobalVol port gkGlobalVol, 0.1
     
 //RANDOMIZATION:
     //Frequency 
-    kGlobalTuning = cent(kGlobalTuning)
+    kLfoTuning lfo kLfoTuningRange, kLfoTuningFreq
+    kGlobalTuning = cent(kGlobalTuning + kLfoTuning)
     kFreqVar jitter kFreqVarRange, .2 * kFreqVarRate, 1 * kFreqVarRate
-    kFreqTotal = (iFreqMIDI + kFreqVar) * kGlobalTuning
+    kFreqTotal = ((iFreqMIDI + kFreqVar) * kGlobalTuning)
 
     //Grain Duration 
     kDurVar jitter kDurVarRange, .2 * kDurVarRate, 1 * kDurVarRate
-    kDurTotal limit kDur+kDurVar, 0.01, 1
+    kLfoDur lfo kLfoDurRange, kLfoDurFreq
+    kDurTotal limit kDur + kDurVar + kLfoDur , 0.01, 1
 
     //Density 
     kDensityVar jitter kDensityVarRange, .2 * kDensityVarRate, 1 * kDensityVarRate
-    kDensityTotal limit kDensity + kDensityVar, 0.5, 80
+    kLfoDensity lfo kLfoDensityRange, kLfoDensityFreq
+    kDensityTotal limit kDensity + kDensityVar + kLfoDensity, 0.5, 80
 
 //GRANULATION:
     kFreqPow = 1
@@ -257,6 +290,9 @@ instr Grains;Grains
 
 //FILTERING: 
 
+    //LFO
+    kFilterLfo lfo kLfoFilterRange, kLfoFilterFreq
+    
     //Envelope:    
     if iFilterAttack > 0.01 then
         kFilterEnv1  expsegr iFilterRange, iFilterAttack, 1 * iFilterFreq, iFilterDecay, 1 * iFilterSustain * iFilterFreq, iFilterRelease, iFilterRange
@@ -264,17 +300,17 @@ instr Grains;Grains
         kFilterEnv1  expsegr iFilterFreq, iFilterDecay, 1 * iFilterSustain * iFilterFreq, iFilterRelease, iFilterFreq
     endif
     
-    /*kFilterFreqControl = kcc1 * kFilterFreq
-    kFilterEnv scale kFilterEnv1, kFilterFreqControl, 0
-    printk 0.5, kFilterEnv*/
+    kFilterEnv scale kFilterEnv1, kcc1*5, 0
     
-    kFilterTotal ntrpol 0, 20000, kFilterEnv1 * kFilterFreq * kcc1
+    kFilterTotal ntrpol 0, 20000, kFilterEnv ;kFilterEnv1 * kcc1
     aFilterEnv interp kFilterTotal
 
     //Frequency
     kFilterFreqTotal = aFilterEnv + kFreqTotal ;kFreqTotal = cpsmidi + global cent tuning + frequency randomization values
     kFilterFreqTotal limit kFilterFreqTotal, 20, 20000
-
+    kFilterFreqTotal = kFilterFreqTotal * kFilterFreq
+    
+  
     //Filter type selection
     if iFilterType == 3 then
         aSigFilter butterbp aGrainSum, kFilterFreqTotal, kFilterBW
@@ -284,11 +320,16 @@ instr Grains;Grains
     endif
 
 //PANNING
-    aSigL, aSigR pan2 aSigFilter * gkGlobalVol, kGlobalPan
+    kPanLfo lfo kLfoPanRange, kLfoPanFreq
+    kPanLfo += 1
+    aSigL, aSigR pan2 aSigFilter * gkGlobalVol, kGlobalPan * kPanLfo
 
 //OUTPUT
-    gaSigL = aSigL * aAmpEnv
-    gaSigR = aSigR * aAmpEnv
+    aAmpLfo lfo kLfoAmpRange, kLfoAmpFreq
+    aAmpLfo += 0.5
+    gaSigL = aSigL * aAmpEnv * aAmpLfo
+    gaSigR = aSigR * aAmpEnv * aAmpLfo
+    
     outs gaSigL , gaSigR 
     
 //EFFECT SENDS
