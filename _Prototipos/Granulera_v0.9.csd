@@ -55,8 +55,8 @@ label bounds(720, 350, 70, 21) fontcolour(255, 255, 255, 255) text("L F O")
 label bounds(696, 108, 117, 21) fontcolour(255, 255, 255, 255) text("F I L T E R")
 label bounds(638, 134, 115, 18) fontcolour(255, 255, 255, 255) text("Filter Type")
 combobox bounds(766, 132, 87, 22) text("Low Pass", "High Pass", "Band Pass") fontcolour(188, 151, 49, 255) channel("FilterSelection")
-rslider bounds(562, 160, 100, 70) range(0.001, 1, 1, 1, 0.001) text("Frequency") channel("FilterFreq") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255) identchannel("cc1")
-rslider bounds(664, 160, 100, 69) range(0.001, 1, 0.001, 1, 0.001) text("Start/End Freq") channel("FilterRange") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(562, 160, 100, 70) range(0.001, 1, 1, 0.5, 0.001) text("Frequency") channel("FilterFreq") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255) identchannel("cc1")
+rslider bounds(664, 160, 100, 69) range(0.001, 1, 0.001, 0.5, 0.001) text("Start/End Freq") channel("FilterRange") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
 rslider bounds(768, 158, 100, 70) range(1, 100, 1, 0.5, 0.1) text("Resonance") channel("FilterReson") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 rslider bounds(868, 158, 100, 70) range(1, 5000, 1, 0.5, 0.1) text("Bandwidth") channel("FilterBW") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
@@ -64,7 +64,7 @@ rslider bounds(868, 158, 100, 70) range(1, 5000, 1, 0.5, 0.1) text("Bandwidth") 
 label bounds(664, 238, 160, 17) fontcolour(255, 255, 255, 255) text("Filter Envelope")
 rslider bounds(572, 260, 100, 70) range(0.01, 10.01, 0, 0.5, 0.01) text("Attack") channel("FilterAttack") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 rslider bounds(672, 258, 100, 70) range(0.01, 10.01, 0.01, 0.5, 0.01) text("Decay") channel("FilterDecay") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(772, 260, 100, 70) range(0.01, 1.01, 1, 1, 0.001) text("Sustain") channel("FilterSustain") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(772, 260, 100, 70) range(0.01, 1.01, 1, 0.5, 0.001) text("Sustain") channel("FilterSustain") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 rslider bounds(870, 260, 100, 70) range(0.01, 10.01, 0.1, 0.5, 0.01) text("Release") channel("FilterRelease") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
 //EFFECTS
@@ -121,8 +121,7 @@ ksmps = 32
 nchnls = 2
 0dbfs = 1
 //TO DO:
-;Make filter freq fully controllable during performance
-;CC1 control for filter frequency is tied to frequency knob
+;CC1 control for filter frequency is tied to frequency knob values
 ;Add LFO to filter
 ;Add presets
 ;Fix UI
@@ -236,9 +235,7 @@ instr Grains;Grains
 //MIDI:
     iFreqMIDI cpsmidi
     aAmpEnv mxadsr iAttack, iDecay, iSustain, iRelease
-    kcc1 init 0
-    kcc1 chanctrl 1, 1, 0.001, 1
-    ;chnset kcc1, "cc1"
+    kcc1 chanctrl 1, 1, 0, 1
         
 //PORT:
     kOsc1Vol port kOsc1Vol, 0.02
@@ -252,8 +249,6 @@ instr Grains;Grains
 
     kFilterFreq port kFilterFreq, 0.02
     kFilterReson port kFilterReson, 0.02
-
-    kcc1 port kcc1, 0.02
   
     kGlobalPan port kGlobalPan, 0.02
     gkGlobalVol port gkGlobalVol, 0.1
@@ -301,27 +296,32 @@ instr Grains;Grains
     aGrainSum sum aGrain1 * kOsc1Vol * .1, aGrain2 * kOsc2Vol * .1, aGrain3 * kOsc3Vol * .1
 
 //FILTERING: 
-    //LFO
-    
     //Envelope:    
     if iFilterAttack > 0.01 then
         kFilterEnv  expsegr iFilterRange, iFilterAttack, iFilterFreq, iFilterDecay, iFilterSustain * iFilterFreq, iFilterRelease, iFilterRange
     else
         kFilterEnv  expsegr iFilterFreq, iFilterDecay,iFilterSustain * iFilterFreq, iFilterRelease, iFilterRange
     endif
-   
+    
+    
+    kcc1Trig changed2 kcc1
+    kcc1Trig2 init 0
+    if kcc1Trig == 1 then
+        kcc1Trig2 = 1
+    endif
+    printk 0.2, kcc1Trig2
     
     if release() == 0 then
-        if kcc1 > kFilterEnv then
+        if kcc1Trig2 == 1 then ;kcc1 > kFilterEnv then
             kFilterFreqSum = kcc1
         else
             kFilterFreqSum = kFilterEnv
         endif  
     else
         kFilterFreqSum = kFilterEnv
-        kFilterFreq port kFilterFreq, 0.1
-        ;kFilterFreq tonek kFilterEnv, 20
     endif
+
+    kFilterFreqSum port kFilterFreqSum, 0.2
     
     kFilterEnvTotal ntrpol 0, 20000, kFilterFreqSum
     aFilterEnv interp kFilterEnvTotal
