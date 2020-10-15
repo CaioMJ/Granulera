@@ -105,12 +105,17 @@ rslider bounds(792, 352, 80, 70) range(0, 15, 0, 0.5, 0.01) text("Frequency") ch
 
 //MODULATION
 label bounds(684, 442, 203, 20) fontcolour(255, 255, 255, 255) text("M O D U L A T I O N")
-label bounds(628, 482, 83, 15) fontcolour(255, 255, 255, 255) text("Ring")
-checkbox bounds(720, 476, 26, 26) shape("circle") colour:0(128, 128, 128, 255) colour:1(188, 151, 49, 255) fontcolour:0(255, 255, 255, 255) fontcolour:1(255, 255, 255, 255) channel("RingMod")
-rslider bounds(604, 506, 80, 70) range(1, 10, 0, 1, 0.01) text("Freq Multiplier") channel("RMFreq") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(684, 506, 80, 70) range(0, 1, 0, 1, 0.01) text("Ampltude") channel("RMAmp") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+label bounds(642, 486, 83, 15) fontcolour(255, 255, 255, 255) text("Ring")
+rslider bounds(604, 510, 80, 70) range(1, 10, 1, 1, 0.01) text("Freq Multiplier") channel("RMFreq") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(684, 510, 80, 70) range(0, 1, 0, 1, 0.01) text("Amount") channel("RMAmp") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
+label bounds(816, 486, 83, 15) fontcolour(255, 255, 255, 255) text("Amplitude")
+rslider bounds(778, 510, 80, 70) range(1, 10, 1, 1, 0.01) text("Freq Multiplier") channel("AMFreq") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(860, 510, 80, 70) range(0, 1, 0, 1, 0.01) text("Amount") channel("AMAmp") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
+label bounds(730, 590, 83, 15) fontcolour(255, 255, 255, 255) text("Frequency")
+rslider bounds(692, 612, 80, 70) range(0, 20000, 1, 1, 0.01) text("Freq Multiplier") channel("FMFreq") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(772, 612, 80, 70) range(0, 1, 0, 1, 0.01) text("Amount") channel("FMAmp") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
 
 //GLOBALS
@@ -136,6 +141,9 @@ checkbox bounds(244, 472, 120, 26)  channel("cc1on") text("Modwheel on")  fontco
 ksmps = 32
 nchnls = 2
 0dbfs = 1
+
+//TO DO:
+;Fix FM Modulation implementation
 
 //BACKLOG:
 ;Add an extra f table to load audio files into oscillators
@@ -232,7 +240,10 @@ instr Grains;Grains
     //Modulation
     kRMFreq chnget "RMFreq"
     kRMAmp chnget "RMAmp"
-    iRingMod chnget "RingMod"
+    kAMFreq chnget "AMFreq"
+    kAMAmp chnget "AMAmp"
+    kFMFreq chnget "FMFreq"
+    kFMAmp chnget "FMAmp"
 
 //OSCILLATORS:
     kFn1 = kFn1 + 10 //Offset for waveform f-table numbers
@@ -269,6 +280,10 @@ instr Grains;Grains
     
     kRMFreq port kRMFreq, 0.02
     kRMAmp port kRMAmp, 0.02
+    kAMFreq port kAMFreq, 0.02
+    kAMAmp port kAMAmp, 0.02
+    kFMFreq port kFMFreq, 0.02
+    kFMAmp port kFMAmp, 0.02
     
 //LFOs
     kLfoDur lfo kLfoDurRange, kLfoDurFreq
@@ -284,10 +299,16 @@ instr Grains;Grains
     aAmpLfo += 0.5
      
 //RANDOMIZATION:
+
     //Frequency 
     kGlobalTuning = cent(kGlobalTuning + kLfoTuning)
     kFreqVar jitter kFreqVarRange, .2 * kFreqVarRate, 1 * kFreqVarRate
-    kFreqTotal = ((iFreqMIDI + kFreqVar) * kGlobalTuning)
+    kFreqSum = ((iFreqMIDI + kFreqVar) * kGlobalTuning)
+    
+        //FM
+        kFMOsc poscil 1, kFMFreq
+        kFreqTotal ntrpol kFreqSum, kFreqSum + kFMOsc, kFMAmp
+        
 
     //Grain Duration 
     kDurVar jitter kDurVarRange, .2 * kDurVarRate, 1 * kDurVarRate
@@ -297,10 +318,6 @@ instr Grains;Grains
     kDensityVar jitter kDensityVarRange, .2 * kDensityVarRate, 1 * kDensityVarRate
     kDensityTotal limit kDensity + kDensityVar + kLfoDensity, 0.5, 80
     
-//MODULATION
-    //AM
-    aRMOsc poscil kRMAmp, kRMFreq * kFreqTotal
-
 //GRANULATION:
     kFreqPow = 1
     kPhasePow = 1
@@ -377,21 +394,26 @@ instr Grains;Grains
         kFilterReson limit kFilterReson, 1, 50
         aSigFilter bqrez aGrainSum, kFilterFreqTotal, kFilterReson, iFilterType -1   
     endif
-
+    
+//MODULATION
+    //RM
+    aRMOsc poscil 1, kRMFreq * kFreqTotal
+    //AM
+    aAMOsc poscil 0.5, kAMFreq * kFreqTotal
+    aAMOsc += 0.5
+    
+//SUMMING    
+    aSig = aSigFilter * gkGlobalVol * aAmpEnv * aAmpLfo
+    
+    aRingModSig ntrpol aSig, aRMOsc * aSig, kRMAmp
+    aAmpModSig ntrpol aSig, aAMOsc * aSig, kAMAmp
+    
+    aSigSum = aAmpModSig * aRingModSig
+    
 //PANNING
-    aSigL, aSigR pan2 aSigFilter * gkGlobalVol, kGlobalPan * kPanLfo
+    gaSigL, gaSigR pan2 aSigSum, kGlobalPan * kPanLfo
 
-//OUTPUT
-    aRing init 1
-    if iRingMod == 1 then
-        aRing = aRMOsc
-    else
-        aRing = 1
-    endif
-    
-    gaSigL = aSigL * aAmpEnv * aAmpLfo * aRing
-    gaSigR = aSigR * aAmpEnv * aAmpLfo * aRing
-    
+//OUTPUT    
     outs gaSigL , gaSigR 
     
 //EFFECT SENDS
