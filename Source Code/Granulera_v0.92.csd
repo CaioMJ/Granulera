@@ -128,7 +128,7 @@ label bounds(998, 502, 160, 20) fontcolour(255, 255, 255, 255) text("AMP ENVELOP
 hslider bounds(978, 522, 200, 36) range(0.01, 10, 0.1, 0.5, 0.01) text("Attack") channel("AmpAttack") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 hslider bounds(978, 556, 200, 36) range(0.01, 10, 0.1, 0.5, 0.01) text("Decay") channel("AmpDecay") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 hslider bounds(976, 590, 200, 36) range(0.0001, 1, 1, 1, 0.01) text("Sustain") channel("AmpSustain") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-hslider bounds(976, 624, 200, 36) range(0.01, 10, 0.1, 1, 0.01) text("Release") channel("AmpRelease") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+hslider bounds(976, 624, 200, 36) range(0.01, 10, 0.4, 1, 0.01) text("Release") channel("AmpRelease") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 hslider bounds(976, 432, 200, 36) range(-6000, 6000, 0, 1, 0.01) channel("GlobalTuning") text("Tuning") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 checkbox bounds(244, 472, 120, 26)  channel("cc1on") text("Modwheel on")  fontcolour:0(255, 255, 255, 255) fontcolour:1(255, 255, 255, 255) colour:1(188, 151, 49, 255) shape("circle") colour:0(128, 128, 128, 255)
 </Cabbage>
@@ -140,9 +140,6 @@ checkbox bounds(244, 472, 120, 26)  channel("cc1on") text("Modwheel on")  fontco
 ksmps = 32
 nchnls = 2
 0dbfs = 1
-
-//TO DO:
-;Fix FM Modulation implementation
 
 //BACKLOG:
 ;Add an extra f table to load audio files into oscillators
@@ -305,7 +302,8 @@ instr Grains;Grains
     kModAmpLfo lfo kLfoModAmpRange, kLfoModAmpFreq
     kModAmpLfo += 0.5
     kModFreqLfo lfo kLfoModFreqRange, kLfoModFreqFreq
-     
+    
+
 //RANDOMIZATION:
 
     //Frequency 
@@ -321,6 +319,16 @@ instr Grains;Grains
     kDensityVar jitter kDensityVarRange, .2 * kDensityVarRate, 1 * kDensityVarRate
     kDensityTotal limit kDensity + kDensityVar + kLfoDensity, 0.5, 80
     
+//MODULATION
+    //RM
+    kRMFreq = cent(kRMFreq)
+    aRMOsc poscil 1, (kRMFreq * kFreqTotal) + kModFreqLfo
+    //AM
+    kAMFreq = cent(kAMFreq)
+    aAMOsc poscil 0.5, (kAMFreq * kFreqTotal) + kModFreqLfo
+    aAMOsc += 0.5
+     
+    
 //GRANULATION:
     kFreqPow = 1
     kPhasePow = 1
@@ -335,7 +343,12 @@ instr Grains;Grains
 
 //GRAIN SUMMING:	
     aGrainSum sum aGrain1 * kOsc1Vol * .3, aGrain2 * kOsc2Vol * .3, aGrain3 * kOsc3Vol * .3
-
+    
+    aRingModSig ntrpol aGrainSum, aRMOsc * aGrainSum, kRMAmp * kModAmpLfo
+    aAmpModSig ntrpol aGrainSum, aAMOsc * aGrainSum, kAMAmp * kModAmpLfo
+    
+    aGrainMod = (aRingModSig * aAmpModSig) * gkGlobalVol * aAmpEnv * aAmpLfo  
+    
 //FILTERING: 
     //Envelope:    
     if iFilterAttack > 0.01 then
@@ -395,30 +408,15 @@ instr Grains;Grains
         aSigFilter butterbp aGrainSum, kFilterFreqTotal, kFilterBW
     else
         kFilterReson limit kFilterReson, 1, 50
-        aSigFilter bqrez aGrainSum, kFilterFreqTotal, kFilterReson, iFilterType -1   
+        aSigFilter bqrez aGrainMod, kFilterFreqTotal, kFilterReson, iFilterType -1   
     endif
     
-//MODULATION
-    //RM
-    kRMFreq = cent(kRMFreq)
-    aRMOsc poscil 1, (kRMFreq * kFreqTotal) + kModFreqLfo
-    //AM
-    kAMFreq = cent(kAMFreq)
-    aAMOsc poscil 0.5, (kAMFreq * kFreqTotal) + kModFreqLfo
-    aAMOsc += 0.5
-    
 //SUMMING    
-    aSig = aSigFilter * gkGlobalVol * aAmpEnv * aAmpLfo
+    ;aSig = aSigFilter * gkGlobalVol * aAmpEnv * aAmpLfo  
     
-    aRingModSig ntrpol aSig, aRMOsc * aSig, kRMAmp * kModAmpLfo
-    aAmpModSig ntrpol aSig, aAMOsc * aSig, kAMAmp * kModAmpLfo
-    
-    aSigSum = aAmpModSig * aRingModSig
-    
-//PANNING
-    gaSigL, gaSigR pan2 aSigSum, kGlobalPan * kPanLfo
+//PANNING + OUTPUT
+    gaSigL, gaSigR pan2 aSigFilter, kGlobalPan * kPanLfo
 
-//OUTPUT    
     outs gaSigL , gaSigR 
     
 //EFFECT SENDS
