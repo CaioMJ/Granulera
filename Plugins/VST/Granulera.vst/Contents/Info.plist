@@ -5,13 +5,13 @@
 	<key>BuildMachineOSBuild</key>
 	<string>17G8037</string>
 	<key>CFBundleDisplayName</key>
-	<string>Grranulera</string>
+	<string>Granulera</string>
 	<key>CFBundleExecutable</key>
-	<string>Grranulera</string>
+	<string>Granulera</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.cabbageaudio.Grranulera</string>
+	<string>com.cabbageaudio.Granulera</string>
 	<key>CFBundleName</key>
-	<string>Grranulera</string>
+	<string>Granulera</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>

@@ -39,8 +39,8 @@ hslider bounds(16, 600, 200, 36) range(-100, 100, 0, 1, 1) text("Cents") channel
 label bounds(358, 90, 99, 20) fontcolour(255, 255, 255, 255) text("G R A I N S")
 label bounds(294, 236, 230, 15) fontcolour(255, 255, 255, 255) text("Randomization")
 //Freq
-rslider bounds(494, 328, 80, 70) range(1, 1000, 0, 0.5, 1) channel("FrequencyVariationRange") text("Frequency Range") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(494, 254, 80, 70) range(0.1, 10, 1, 1, 0.1) channel("FrequencyVariationRate") text("Frequency Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(494, 254, 80, 70) range(1, 1000, 0, 0.5, 1) channel("FrequencyVariationRange") text("Frequency Range") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(494, 328, 80, 70) range(0.1, 10, 1, 1, 0.1) channel("FrequencyVariationRate") text("Frequency Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 rslider bounds(412, 148, 80, 70) range(0, 1000, 0, 0.3, 0.01) text("Pitch Variation") channel("PitchVariation") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 //Duration
 rslider bounds(244, 148, 80, 70) range(0.01, 1, 0.1, 0.5, 0.01) channel("GrainDuration") text("Grain Duration") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
