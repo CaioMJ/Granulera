@@ -9,6 +9,9 @@ label bounds(10, 8, 118, 20) text("PRESETS") fontcolour(255, 255, 255, 255)
 combobox bounds(4, 36, 235, 32) channel("Presets") channeltype("string") value("1") populate("*.snaps") fontcolour(188, 151, 49, 255) 
 filebutton bounds(140, 4, 64, 33) channel("SavePreset") text("Save", "Save") mode("snapshot")
 
+button bounds(16, 666, 80, 40) text("PANIC", "PANIC") channel("Panic") colour:1(255, 0, 0, 255) 
+
+
 //OSCILLATORS
 label bounds(298, 124, 97, 15) text("Windowing") fontcolour(255, 255, 255, 255)
 combobox bounds(404, 122, 93, 20) text("Sync", "Hanning", "Blackman-Harris", "Gaussian", "Kaiser", "Rectangle", "") fontcolour(188, 151, 49, 255) channel("WindowingSelection") value(2)
@@ -17,7 +20,7 @@ label bounds(34, 114, 140, 20) text("OSCILLATOR 1") fontcolour(255, 255, 255, 25
 label bounds(12, 140, 82, 17) text("Waveform") fontcolour(255, 255, 255, 255)
 combobox bounds(92, 138, 75, 23) text("Sine", "Triangle", "Sawtooth", "Square", "Pulse") fontcolour(188, 151, 49, 255) channel("WaveformSelection1")
 hslider bounds(10, 168, 173, 37) range(0, 1, 1, 1, 0.01) text("Volume") channel("Oscillator1Volume") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-hslider bounds(8, 206, 173, 37) range(-48, 48, 0, 1, 1) text("Semitone") channel("Oscillator1Semitone") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+hslider bounds(10, 204, 173, 37) range(-48, 48, 0, 1, 1) text("Semitone") channel("Oscillator1Semitone") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 hslider bounds(10, 242, 173, 37) range(-100, 100, 0, 1, 1) text("Cents") channel("Oscillator1Cents") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
 
@@ -40,16 +43,16 @@ label bounds(358, 90, 99, 20) fontcolour(255, 255, 255, 255) text("G R A I N S")
 label bounds(294, 236, 230, 15) fontcolour(255, 255, 255, 255) text("Randomization")
 //Freq
 rslider bounds(494, 254, 80, 70) range(1, 1000, 0, 0.5, 1) channel("FrequencyVariationRange") text("Frequency Range") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(494, 328, 80, 70) range(0.1, 10, 1, 1, 0.1) channel("FrequencyVariationRate") text("Frequency Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(494, 328, 80, 70) range(0, 10, 0, 1, 0.1) channel("FrequencyVariationRate") text("Frequency Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 rslider bounds(412, 148, 80, 70) range(0, 1000, 0, 0.3, 0.01) text("Pitch Variation") channel("PitchVariation") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 //Duration
 rslider bounds(244, 148, 80, 70) range(0.01, 1, 0.1, 0.5, 0.01) channel("GrainDuration") text("Grain Duration") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 rslider bounds(244, 254, 80, 70) range(0, 1, 0, 0.5, 0.01) channel("DurationVariationRange") text("Duration Range") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(244, 328, 80, 70) range(0.1, 10, 1, 1, 0.1) channel("DurationVariationRate") text("Duration Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(244, 328, 80, 70) range(0, 10, 0, 1, 0.1) channel("DurationVariationRate") text("Duration Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 //Density
 rslider bounds(328, 148, 80, 70) range(0.5, 100, 20, 0.5, 0.1) channel("GrainDensity") text("Grain Density") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 rslider bounds(368, 254, 80, 70) range(0, 100, 0, 0.5, 0.1) channel("DensityVariationRange") text("Density Range") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(368, 328, 80, 70) range(0.1, 10, 1, 1, 0.1) channel("DensityVariationRate") text("Density Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(368, 328, 80, 70) range(0, 10, 0, 1, 0.1) channel("DensityVariationRate") text("Density Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 //Phase
 rslider bounds(494, 148, 80, 70) range(0, 1, 0, 1, 0.05) text("Phase Variation") channel("PhaseVariation") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
@@ -142,7 +145,6 @@ nchnls = 2
 0dbfs = 1
 
 //BACKLOG:
-;Add an extra f table to load audio files into oscillators
 ;Make an effect variant that granulates live input
 
 seed 0
@@ -163,7 +165,7 @@ giSaw ftgen 13, 0, 4096, 10, 1, .5, .333, .25, .2, .166, .143, .125, .111, .1, .
 giSquare ftgen 14, 0, 4096, 10, 1, 0, .333, 0, .2, 0, .143, 0, .111, 0, .0909, 0, .077, 0, .0666, 0, .0588
 giPulse ftgen 15, 0, 4096, 10, 1, 1, 1, 1, 0.7, 0.5, 0.3, 0.1
 
-instr Grains;Grains
+instr Grains
 //CHNGET:
     //Amp Envelope
     iAttack chnget "AmpAttack"
@@ -246,6 +248,13 @@ instr Grains;Grains
     kFMFreq chnget "FMFreq"
     kFMAmp chnget "FMAmp"
 
+ kPanic chnget "Panic"
+ if kPanic == 1 then 
+    turnoff
+    chnset 0, "PanicSet"
+ endif
+    
+    
 //OSCILLATORS:
     kFn1 = kFn1 + 10 //Offset for waveform f-table numbers
     kOsc1Semi = semitone(kOsc1Semi)
@@ -468,29 +477,11 @@ if gkReverbSend > 0 then
 endif
 endin
 
-/* Mixer
-//CHNGET
-kDryWet chnget "DryWet"
-kDryWet port kDryWet, 0.02
-
-//SUMMING
-aFxSumL = gaVerbL + gaTapL
-aFxSumR = gaVerbR + gaTapR
-
-//INTERPOLATION
-aSigSumL ntrpol gaSigL, aFxSumL, kDryWet
-aSigSumR ntrpol gaSigR, aFxSumR, kDryWet
-
-//OUTPUT
-outs aSigSumL, aSigSumR
-endin*/
-
 </CsInstruments>
 <CsScore>
 f0 z
 i "Delay" 0 9999
 i "Reverb" 0 9999
-;i "Mixer" 0 9999
 </CsScore>
 </CsoundSynthesizer>
 <bsbPanel>

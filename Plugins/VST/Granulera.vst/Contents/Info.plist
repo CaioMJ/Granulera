@@ -3,11 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>17G8037</string>
+	<string>18G6032</string>
 	<key>CFBundleDisplayName</key>
 	<string>Granulera</string>
 	<key>CFBundleExecutable</key>
 	<string>Granulera</string>
+	<key>CFBundleIconFile</key>
+	<string>Icon.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.cabbageaudio.Granulera</string>
 	<key>CFBundleName</key>
@@ -15,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.3.0</string>
+	<string>2.5.5</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -23,21 +25,23 @@
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2.3.0</string>
+	<string>2.5.5</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>10B61</string>
+	<string>11C505</string>
 	<key>DTPlatformVersion</key>
 	<string>GM</string>
 	<key>DTSDKBuild</key>
-	<string>18B71</string>
+	<string>19B90</string>
 	<key>DTSDKName</key>
-	<string>macosx10.14</string>
+	<string>macosx10.15</string>
 	<key>DTXcode</key>
-	<string>1010</string>
+	<string>1131</string>
 	<key>DTXcodeBuild</key>
-	<string>10B61</string>
+	<string>11C505</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.8</string>
 	<key>NSHighResolutionCapable</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>

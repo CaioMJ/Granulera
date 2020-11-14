@@ -1,0 +1,179 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fswiss\fcharset0 Arial-BoldMT;\f2\froman\fcharset0 Times-Roman;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww16100\viewh10740\viewkind0
+\deftab720
+\pard\pardeftab720\sl360\sa240\partightenfactor0
+
+\f0\fs32 \cf2 \expnd0\expndtw0\kerning0
+MANUAL DE INSTRU\'c7\'d5ES\
+
+\f1\b Granulera 
+\f0\b0 \'e9 um sintetizador granular voltado para a cria\'e7\'e3o de texturas aleat\'f3rias, desenvolvido por Caio M. Jiacomini.\
+Se restarem d\'favidas ap\'f3s a leitura desse manual, sinta-se a vontade para entrar em contato comigo por email (caiojmini@gmail.com)
+\f2\fs24 \
+
+\f0\fs32 Esse instrumento foi desenvolvido em Csound pela framework da Cabbage Audio. O reposit\'f3rio com o c\'f3digo fonte pode ser achado aqui
+\f2\fs24  
+\f0\fs32 (https://github.com/CaioMJ/Granulera).\
+\
+Clique duas vezes em um par\'e2metro para reiniciar seu valor\
+Os valores podem tamb\'e9m ser alterados com a rodinha do mouse\
+Granulera \'e9 dividido em tr\'eas sess\'f5es: 
+\f1\b Esquerda, Centro e Direita\
+
+\f0\b0 \
+
+\f1\b ESQUERDA\
+		Presets:\
+		
+\f0\b0 Clique no bot\'e3o 
+\f1\b save
+\f0\b0  para guardar a configura\'e7\'e3o atual como um preset. A primeira coisa que voc\'ea deve fazer \'e9 clicar nessa bot\'e3o assim que voc\'ea abrir o plugin para salvar a configura\'e7\'e3o inicial como o preset 0 (os nomes s\'e3o gerados automaticamente e n\'e3o tem realmente um jeito f\'e1cil de alter\'e1-los)
+\f1\b \
+
+\f0\b0 		Clique na seta para abrir o menu com os presets salvos\
+\
+	
+\f1\b Oscillators:\
+		
+\f0\b0 Granulera oferece tr\'eas osciladores com formas de onda simples. Eles oferecem controle independente da sele\'e7\'e3o de forma de onda, volume e afina\'e7\'e3o (dividida entre controle de semitons e cents)
+\f1\b \
+
+\f0\b0 \
+
+\f1\b CENTRO\
+	Grains:\
+		
+\f0\b0 Essa se\'e7\'e3o oferece controle dos par\'e2metros de granula\'e7\'e3o
+\f1\b \
+
+\f0\b0 		
+\f1\b Windowing: 
+\f0\b0 seleciona a forma do envelope
+\f1\b  
+\f0\b0 para os gr\'e3o individuais\
+		
+\f1\b Grain Duration: 
+\f0\b0 determina o tamanho de cada gr\'e3o em segundos\
+		
+\f1\b Grain Density: 
+\f0\b0 determina quantos gr\'e3o s\'e3o formados em um segundo\
+		
+\f1\b Pitch Variation: 
+\f0\b0 determina a varia\'e7\'e3o de afina\'e7\'e3o entre gr\'e3os individuais\
+		
+\f1\b Phase Variation
+\f0\b0 : determina a varia\'e7\'e3o da fase de in\'edcio entre gr\'e3os individuais\
+\
+	
+\f1\b Randomization:\
+		Duration Range: 
+\f0\b0 determina o alcance da aleatoriza\'e7\'e3o do par\'e2metro de Grain Duration entre os valores positivo e negativo do n\'famero determinado\
+		
+\f1\b Duration Rate: 
+\f0\b0 determina o qu\'e3o r\'e1pido novos valores aleat\'f3rios ser\'e3o gerados para o par\'e2metro de Grain Duration
+\f1\b \
+		Density Range:  
+\f0\b0 determina o alcance da aleatoriza\'e7\'e3o do par\'e2metro de Grain Density entre os valores positivo e negativo do n\'famero determinado\
+		
+\f1\b Density Rate: 
+\f0\b0 determina o qu\'e3o r\'e1pido novos valores aleat\'f3rios ser\'e3o gerados para o par\'e2metro de Grain Density\
+		
+\f1\b Frequency Range: 
+\f0\b0 determina o alcance da aleatoriza\'e7\'e3o para a afina\'e7\'e3o geral do sintetizador entre os valores positivo e negativo do n\'famero determinado.\
+		
+\f1\b Frequency Rate: 
+\f0\b0 determina o qu\'e3o r\'e1pido novos valores aleat\'f3rios ser\'e3o gerados para a afina\'e7\'e3o geral do sintetizador\
+\
+	
+\f1\b Filter:\
+		Filter Type: 
+\f0\b0 Seleciona o tipo de filtro entre low pass, high pass e band pass. 
+\f1\b \
+		Modwheel On: 
+\f0\b0 ativa o controle da frequ\'eancia do filtro pelo cc1 \
+		
+\f1\b Frequency: 
+\f0\b0 controle a frequ\'eacia de corte/centro do filtro\
+		
+\f1\b Start/End Freq:
+\f0\b0  define a frequ\'eancia de in\'edcio e fim do envelope do filtro\
+		
+\f1\b Resonance:
+\f0\b0  controla a reson\'e2ncia dos filtros low pass e high pass\
+		
+\f1\b Bandwidth:
+\f0\b0  controla a largura de banda do filtro bandpass\
+		
+\f1\b Attack, Decay, Sustain, Release: 
+\f0\b0 definem o envelope do filtro\
+\
+	
+\f1\b Modulation:\
+		
+\f0\b0 Define par\'e2metros para modula\'e7\'e3o de amplitude e de anel com uma onda moduladora sen\'f3ide
+\f1\b \
+
+\f0\b0 		
+\f1\b Amount:
+\f0\b0  equil\'edbrio dry/wet entre o sinal n\'e3o afetado e o sinal modulado\
+		
+\f1\b Tuning: 
+\f0\b0 afina\'e7\'e3o da onda moduladora em cents. Relativo \'e0 nota MIDI\
+\
+	
+\f1\b LFO:\
+		
+\f0\b0 Provid\'eancia Low Frequency Oscillators (Osciladores de Baixa Frequ\'eancia) para par\'e2metro chave do instrumento com uma sen\'f3ide. Os seguintes par\'e2metro podem ser modulados por um LFO: Grain Duration, Grain Density, Filter Frequency, Amplitude (volume geral), Panning, Tuning (geral), Modulation Tuning (para ambas as modula\'e7\'f5es), and Modulation Amount ((para ambas as modula\'e7\'f5es)\
+		
+\f1\b Frequency: 
+\f0\b0 frequ\'eancia do LFO em ciclos por segundo\
+		
+\f1\b Amount: 
+\f0\b0 amplitude do sinal gerado pelo LFO\
+\
+
+\f1\b DIREITA\
+	Reverb:\
+		Send:
+\f0\b0  quantidade de sinal a ser enviado para um reverb em paralelo\
+		
+\f1\b Size: 
+\f0\b0 dura\'e7\'e3o do reverb\
+	
+\f1\b Delay:\
+		Send:
+\f0\b0  quantidade de sinal a ser enviado para um delay est\'e9reo em paralelo\
+		
+\f1\b Time Left / Time Right: 
+\f0\b0 define o tempo de delay em segundos para o lado esquerdo e direito independentemente\
+		
+\f1\b Feedback
+\f0\b0 : define a quantidade de feedback do delay \
+\
+	
+\f1\b Global:\
+		Volume: 
+\f0\b0 define o volume geral do instrumento \
+		
+\f1\b Stereo Pan: 
+\f0\b0 define a posi\'e7\'e3o do pan geral para o instrumento\
+		
+\f1\b Tuning: 
+\f0\b0 define a afina\'e7\'e3o geral do instrumento em cents\
+\
+	
+\f1\b Amp Envelope:\
+		Attack, Decay, Sustain, Release: 
+\f0\b0 define o envelope de amplitude geral do instrumento\
+\
+	\
+	
+\f1\b 	
+\f0\b0 \
+		
+\f2\fs24 \
+}
