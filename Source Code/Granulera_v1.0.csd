@@ -54,20 +54,21 @@ rslider bounds(328, 148, 80, 70) range(0.5, 100, 14, 0.5, 0.1) channel("GrainDen
 rslider bounds(368, 254, 80, 70) range(0, 100, 0, 0.5, 0.1) channel("DensityVariationRange") text("Density Range") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 rslider bounds(368, 328, 80, 70) range(0, 10, 0, 1, 0.1) channel("DensityVariationRate") text("Density Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 //Phase
-rslider bounds(494, 148, 80, 70) range(0, 1, 0, 1, 0.05) text("Phase Variation") channel("PhaseVariation") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(494, 148, 80, 70) range(0, 1, 1, 1, 0.05) text("Phase Variation") channel("PhaseVariation") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
 //LFOs
 label bounds(744, 250, 70, 20) fontcolour(255, 255, 255, 255) text("L F O")
 
 //FILTERS
-label bounds(358, 418, 117, 20) fontcolour(255, 255, 255, 255) text("F I L T E R")
-label bounds(310, 446, 89, 15) fontcolour(255, 255, 255, 255) text("Filter Type")
-combobox bounds(404, 444, 87, 20) text("Low Pass", "High Pass", "Band Pass") fontcolour(188, 151, 49, 255) channel("FilterSelection")
+label bounds(352, 448, 117, 20) fontcolour(255, 255, 255, 255) text("F I L T E R")
+label bounds(378, 480, 89, 15) fontcolour(255, 255, 255, 255) text("Filter Type")
+checkbox bounds(250, 474, 120, 26)  channel("FilterNoteTrack") text("Key Tracking")  fontcolour:0(255, 255, 255, 255) fontcolour:1(255, 255, 255, 255) colour:1(188, 151, 49, 255) shape("circle") colour:0(128, 128, 128, 255) value(1)
+combobox bounds(472, 477, 87, 20) text("Low Pass", "High Pass", "Band Pass") fontcolour(188, 151, 49, 255) channel("FilterSelection")
 rslider bounds(244, 510, 80, 70) range(0.001, 1, 1, 0.5, 0.001) text("Frequency") channel("FilterFreq") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255) identchannel("cc1")
 rslider bounds(328, 510, 80, 70) range(0.001, 1, 0.001, 0.5, 0.001) text("Start/End Freq") channel("FilterRange") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
 rslider bounds(412, 510, 80, 70) range(1, 50, 1, 0.5, 0.1) text("Resonance") channel("FilterReson") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(494, 510, 80, 70) range(1, 5000, 1, 0.5, 0.1) text("Bandwidth") channel("FilterBW") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(494, 510, 80, 70) range(1, 5000, 1000, 0.5, 0.1) text("Bandwidth") channel("FilterBW") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
 label bounds(340, 590, 160, 15) fontcolour(255, 255, 255, 255) text("Filter Envelope")
 rslider bounds(244, 610, 80, 70) range(0.01, 10.01, 0, 0.5, 0.01) text("Attack") channel("FilterAttack") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
@@ -76,19 +77,19 @@ rslider bounds(412, 612, 80, 70) range(0.01, 1.01, 1, 0.5, 0.001) text("Sustain"
 rslider bounds(494, 612, 80, 70) range(0.01, 10.01, 0.1, 0.5, 0.01) text("Release") channel("FilterRelease") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
 //EFFECTS
-label bounds(978, 8, 100, 20) fontcolour(255, 255, 255, 255) text("REVERB")
-hslider bounds(978, 32, 200, 36) range(0, 1, 1, 1, 0.01) channel("ReverbSend") text("Send") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-hslider bounds(978, 68, 200, 36) range(0, 1, 0, 1, 0.01) channel("ReverbMix") text("Mix") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+label bounds(976, 352, 100, 20) fontcolour(255, 255, 255, 255) text("REVERB")
+checkbox bounds(1082, 350, 85, 24)  channel("ReverbBypass") text("Bypass")  fontcolour:0(255, 255, 255, 255) fontcolour:1(255, 255, 255, 255) colour:1(188, 151, 49, 255) shape("circle") colour:0(128, 128, 128, 255) value(1)
+hslider bounds(976, 376, 200, 36) range(0, 1, 1, 1, 0.01) channel("ReverbSend") text("Send") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+hslider bounds(976, 412, 200, 36) range(0, 1, 0, 1, 0.01) channel("ReverbMix") text("Mix") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+hslider bounds(976, 450, 200, 36) range(0, 0.9, 0.4, 1, 0.01) channel("ReverbSize") text("Size") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
-hslider bounds(978, 106, 200, 36) range(0, 0.9, 0.4, 1, 0.01) channel("ReverbSize") text("Size") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-
-label bounds(978, 166, 100, 20) fontcolour(255, 255, 255, 255) text("DELAY")
-hslider bounds(984, 188, 200, 36) range(0, 1, 0, 1, 0.01) channel("DelaySend") text("Send") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-hslider bounds(984, 224, 200, 36) range(0, 1, 1, 1, 0.01) channel("DelayMix") text("Mix") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-
-hslider bounds(986, 260, 200, 36) range(0.05, 10, 0, 0.4, 0.01) channel("DelayTimeLeft") text("Time Left") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-hslider bounds(986, 292, 200, 36) range(0.05, 10, 0, 0.4, 0.01) channel("DelayTimeRight") text("Time Right") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-hslider bounds(986, 330, 200, 36) range(0, 1, 0, 1, 0.01) channel("DelayFeedback") text("Feedback") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+label bounds(982, 510, 100, 20) fontcolour(255, 255, 255, 255) text("DELAY")
+checkbox bounds(1090, 508, 85, 24)  channel("DelayBypass") text("Bypass")  fontcolour:0(255, 255, 255, 255) fontcolour:1(255, 255, 255, 255) colour:1(188, 151, 49, 255) shape("circle") colour:0(128, 128, 128, 255) value(1)
+hslider bounds(976, 532, 200, 36) range(0, 1, 0, 1, 0.01) channel("DelaySend") text("Send") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+hslider bounds(976, 568, 200, 36) range(0, 1, 1, 1, 0.01) channel("DelayMix") text("Mix") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+hslider bounds(976, 604, 200, 36) range(0.05, 10, 0, 0.4, 0.01) channel("DelayTimeLeft") text("Time Left") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+hslider bounds(976, 636, 200, 36) range(0.05, 10, 0, 0.4, 0.01) channel("DelayTimeRight") text("Time Right") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+hslider bounds(976, 674, 200, 36) range(0, 1, 0, 1, 0.01) channel("DelayFeedback") text("Feedback") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
 //LFO
 label bounds(630, 396, 131, 15) fontcolour(255, 255, 255, 255) text("Filter Frequency")
@@ -125,24 +126,18 @@ label bounds(832, 124, 83, 15) fontcolour(255, 255, 255, 255) text("Amplitude")
 rslider bounds(790, 148, 80, 70) range(-3600, 3600, 0, 1, 1) text("Tuning") channel("AMFreq") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 rslider bounds(872, 148, 80, 70) range(0, 1, 0, 1, 0.01) text("Amount") channel("AMAmp") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
-
-
 //GLOBALS
-label bounds(1026, 386, 103, 20) fontcolour(255, 255, 255, 255) text("GLOBAL")
-hslider bounds(978, 450, 200, 36) range(0, 1, 0.5, 1, 0.01) text("Stereo Pan") channel("GlobalPan") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-hslider bounds(978, 414, 200, 36) range(0, 1, 1, 1, 0.01) text("Volume") channel("GlobalVolume") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255) fontcolour(255, 255, 255, 255)
+label bounds(1024, 20, 103, 20) fontcolour(255, 255, 255, 255) text("GLOBAL")
+hslider bounds(976, 80, 200, 36) range(0, 1, 0.5, 1, 0.01) text("Stereo Pan") channel("GlobalPan") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+hslider bounds(976, 44, 200, 36) range(0, 1, 1, 1, 0.01) text("Volume") channel("GlobalVolume") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255) fontcolour(255, 255, 255, 255)
 
-label bounds(1000, 540, 160, 20) fontcolour(255, 255, 255, 255) text("AMP ENVELOPE")
-hslider bounds(980, 560, 200, 36) range(0.01, 10, 0.1, 0.5, 0.01) text("Attack") channel("AmpAttack") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-hslider bounds(980, 594, 200, 36) range(0.01, 10, 0.1, 0.5, 0.01) text("Decay") channel("AmpDecay") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-hslider bounds(978, 628, 200, 36) range(0.0001, 1, 1, 1, 0.01) text("Sustain") channel("AmpSustain") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-hslider bounds(978, 662, 200, 36) range(0.01, 10, 0.4, 1, 0.01) text("Release") channel("AmpRelease") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-hslider bounds(978, 486, 200, 36) range(-6000, 6000, 0, 1, 0.01) channel("GlobalTuning") text("Tuning") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-checkbox bounds(454, 474, 120, 26)  channel("cc1on") text("Modwheel on")  fontcolour:0(255, 255, 255, 255) fontcolour:1(255, 255, 255, 255) colour:1(188, 151, 49, 255) shape("circle") colour:0(128, 128, 128, 255)
-checkbox bounds(250, 474, 120, 26)  channel("FilterNoteTrack") text("Note Tracking")  fontcolour:0(255, 255, 255, 255) fontcolour:1(255, 255, 255, 255) colour:1(188, 151, 49, 255) shape("circle") colour:0(128, 128, 128, 255)
+label bounds(998, 168, 160, 20) fontcolour(255, 255, 255, 255) text("AMP ENVELOPE")
+hslider bounds(976, 190, 200, 36) range(0.01, 10, 0.1, 0.5, 0.01) text("Attack") channel("AmpAttack") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+hslider bounds(976, 224, 200, 36) range(0.01, 10, 0.1, 0.5, 0.01) text("Decay") channel("AmpDecay") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+hslider bounds(976, 258, 200, 36) range(0.0001, 1, 1, 1, 0.01) text("Sustain") channel("AmpSustain") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+hslider bounds(976, 292, 200, 36) range(0.01, 10, 0.4, 1, 0.01) text("Release") channel("AmpRelease") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+hslider bounds(976, 116, 200, 36) range(-2400, 2400, 0, 1, 0.01) channel("GlobalTuning") text("Tuning") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
-checkbox bounds(1084, 6, 85, 24)  channel("ReverbBypass") text("Bypass")  fontcolour:0(255, 255, 255, 255) fontcolour:1(255, 255, 255, 255) colour:1(188, 151, 49, 255) shape("circle") colour:0(128, 128, 128, 255)
-checkbox bounds(1086, 164, 85, 24)  channel("DelayBypass") text("Bypass")  fontcolour:0(255, 255, 255, 255) fontcolour:1(255, 255, 255, 255) colour:1(188, 151, 49, 255) shape("circle") colour:0(128, 128, 128, 255)
 
 </Cabbage>
 <CsoundSynthesizer>
@@ -217,7 +212,6 @@ instr Grains
     iFilterDecay chnget "FilterDecay"
     iFilterSustain chnget "FilterSustain"
     iFilterRelease chnget "FilterRelease"
-    kcc1Toggle chnget "cc1on"
     kFilterNoteTracking chnget "FilterNoteTrack"
     //F tables
     iWfn chnget "WindowingSelection"
@@ -281,7 +275,6 @@ instr Grains
     kAmpEnv mxadsr iAttack, iDecay, iSustain, iRelease
     kAmpEnv port kAmpEnv, 0.05
     aAmpEnv interp kAmpEnv
-    kcc1 chanctrl 1, 1, 0, 1
         
 //PORT:
     kOsc1Vol port kOsc1Vol, 0.02
@@ -372,43 +365,23 @@ instr Grains
         kFilterEnv  expsegr iFilterFreq, iFilterDecay,iFilterSustain * iFilterFreq, iFilterRelease, iFilterRange
     endif
     
-    //Toggle between modwheel and UI knob
-    if kcc1Toggle == 1 then
-        kcc1Trig changed2 kcc1
-        kcc1Trig2 init 0
+    //Allows filter frequency to be modulated in real time
+    kcc1Trig changed2 kFilterFreq
+    kcc1Trig2 init 0
         
-        if kcc1Trig == 1 then
-            kcc1Trig2 = 1
-        endif
-            
-        if release() == 0 then
-            if kcc1Trig2 == 1 then
-                kFilterFreqSum = kcc1
-            else
-                kFilterFreqSum = kFilterEnv
-            endif  
-        else
-            kFilterFreqSum = kFilterEnv
-        endif
-        
-    else
-        kcc1Trig changed2 kFilterFreq
-        kcc1Trig2 init 0
-        
-        if kcc1Trig == 1 then
-            kcc1Trig2 = 1
-        endif
+    if kcc1Trig == 1 then
+        kcc1Trig2 = 1
+    endif
 
-        if release() == 0 then
-            if kcc1Trig2 == 1 then
-                kFilterFreqSum = kFilterFreq
-            else
-                kFilterFreqSum = kFilterEnv
-            endif  
+    if release() == 0 then
+        if kcc1Trig2 == 1 then
+            kFilterFreqSum = kFilterFreq
         else
             kFilterFreqSum = kFilterEnv
-        endif
-     endif
+        endif  
+    else
+        kFilterFreqSum = kFilterEnv
+    endif
     
     //Ports and interpolates envelope
     kFilterFreqSum port kFilterFreqSum, 0.2
@@ -417,12 +390,11 @@ instr Grains
     aFilterEnv interp kFilterEnvTotal
     
     //Frequency offset
-    /*if kFilterNoteTracking == 0 then
+    if kFilterNoteTracking == 0 then
         kFilterFreqTotal = kLfoFilter + aFilterEnv
     else
         kFilterFreqTotal = kLfoFilter + aFilterEnv + kFreqTotal;kFreqTotal = cpsmidi + global cent tuning + frequency randomization values
-    endif*/
-    kFilterFreqTotal = kLfoFilter + aFilterEnv + kFreqTotal;kFreqTotal = cpsmidi + global cent tuning + frequency randomization values
+    endif
     kFilterFreqTotal limit kFilterFreqTotal, 20, 20000
   
     //Filter type selection
@@ -501,11 +473,12 @@ instr Delay
     endif       
  endif
 
+ //Outputs dry signal only if both effects are bypassed
  if gkDelayBypass == 1 && gkReverbBypass == 1 then
     outs aSigL, aSigR
  endif
  
-//CLEAR SIGNAL
+//CLEARS SIGNAL
     chnclear "SigL"
     chnclear "SigR"
 endin
