@@ -2,7 +2,7 @@
 
 <CABBAGE_PRESETS>
   <PRESET0 PresetName="CABBAGE_PRESETS 0" Presets="1" Panic="0.0" WindowingSelection="2.0"
-           WaveformSelection1="2.0" Oscillator1Volume="1.0" Oscillator1Semitone="0.0"
+           WaveformSelection1="1.0" Oscillator1Volume="1.0" Oscillator1Semitone="0.0"
            Oscillator1Cents="0.0" WaveformSelection2="1.0" Oscillator2Volume="0.0"
            Oscillator2Semitone="0.0" Oscillator2Cents="0.0" WaveformSelection3="1.0"
            Oscillator3Volume="0.0" Oscillator3Semitone="0.0" Oscillator3Cents="0.0"
@@ -10,7 +10,7 @@
            GrainDuration="0.1000000014901161" DurationVariationRange="0.0"
            DurationVariationRate="0.0" GrainDensity="14.0" DensityVariationRange="0.0"
            DensityVariationRate="0.0" PhaseVariation="1.0" FilterNoteTrack="1.0"
-           FilterSelection="1.0" FilterFreq="0.8420000672340393" FilterRange="0.001000000047497451"
+           FilterSelection="1.0" FilterFreq="1.0" FilterRange="0.001000000047497451"
            FilterReson="1.0" FilterBW="1000.0" FilterAttack="0.0" FilterDecay="0.009999999776482582"
            FilterSustain="1.0" FilterRelease="0.1000000014901161" ReverbBypass="1.0"
            ReverbSend="1.0" ReverbMix="0.0" ReverbSize="0.4000000059604645"
@@ -20,8 +20,8 @@
            LfoDurFreq="0.0" LfoDensityRange="0.0" LfoDensityFreq="0.0" LfoPanRange="0.0"
            LfoPanFreq="0.0" LfoTuningRange="0.0" LfoTuningFreq="0.0" LfoModAmpRange="0.0"
            LfoModAmpFreq="0.0" LfoModFreqRange="0.0" LfoModFreqFreq="0.0"
-           RMFreq="2531.0" RMAmp="0.9899999499320984" AMFreq="0.0" AMAmp="0.0"
-           GlobalPan="0.5" GlobalVolume="1.0" AmpAttack="0.1000000014901161"
+           RMFreq="0.0" RMAmp="0.0" AMFreq="0.0" AMAmp="0.0" GlobalPan="0.5"
+           GrainWidth="0.0" GlobalVolume="1.0" AmpAttack="0.1000000014901161"
            AmpDecay="0.1000000014901161" AmpSustain="1.0" AmpRelease="0.4000000059604645"
            GlobalTuning="0.0"/>
 </CABBAGE_PRESETS>
