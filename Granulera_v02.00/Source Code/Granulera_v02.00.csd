@@ -1,11 +1,11 @@
 <Cabbage> bounds(0, 0, 0, 0)
 //HEADER AND UTILITIES
-form caption("Granulera by Caio M. Jiacomini") size(1200,1000), colour(0, 0, 0), pluginid("cjb1")
+form caption("Granulera by Caio M. Jiacomini") size(1200,800), colour(0, 0, 0), pluginid("cjb1")
 label bounds(408, 6, 344, 45) fontcolour(188, 151, 49, 255) text("G R A N U L E R A")
 label bounds(482, 50, 212, 21) text("v2") colour(255, 255, 255, 0) fontcolour(188, 151, 49, 255)
 
 label bounds(484, 78, 212, 21) text("by Caio M. Jiacomini") colour(255, 255, 255, 0) fontcolour(255, 255, 255, 255)
-keyboard bounds(4, 918, 1194, 77)
+keyboard bounds(2, 724, 1194, 77)
 
 label bounds(10, 8, 118, 20) text("PRESETS") fontcolour(255, 255, 255, 255)
 combobox bounds(4, 36, 235, 32) channel("Presets") channeltype("string") value("1") populate("*.snaps") fontcolour(188, 151, 49, 255) 
@@ -41,19 +41,19 @@ hslider bounds(16, 600, 200, 36) range(-100, 100, 0, 1, 1) text("Cents") channel
 
 //GRAINS
 label bounds(358, 90, 99, 20) fontcolour(255, 255, 255, 255) text("G R A I N S")
-label bounds(294, 236, 230, 15) fontcolour(255, 255, 255, 255) text("Randomization")
+label bounds(296, 266, 230, 15) fontcolour(255, 255, 255, 255) text("Randomization")
 //Freq
-rslider bounds(494, 254, 80, 70) range(1, 1000, 0, 0.5, 1) channel("FrequencyVariationRange") text("Frequency Range") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(494, 328, 80, 70) range(0, 10, 0, 1, 0.1) channel("FrequencyVariationRate") text("Frequency Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(496, 284, 80, 70) range(1, 1000, 0, 0.5, 1) channel("FrequencyVariationRange") text("Frequency Range") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(496, 358, 80, 70) range(0, 10, 0, 1, 0.1) channel("FrequencyVariationRate") text("Frequency Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 rslider bounds(412, 148, 80, 70) range(0, 1000, 0, 0.3, 0.01) text("Pitch Variation") channel("PitchVariation") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 //Duration
 rslider bounds(244, 148, 80, 70) range(0.01, 1, 0.1, 0.5, 0.01) channel("GrainDuration") text("Grain Duration") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(244, 254, 80, 70) range(0, 1, 0, 0.5, 0.01) channel("DurationVariationRange") text("Duration Range") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(244, 328, 80, 70) range(0, 10, 0, 1, 0.1) channel("DurationVariationRate") text("Duration Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(246, 284, 80, 70) range(0, 1, 0, 0.5, 0.01) channel("DurationVariationRange") text("Duration Range") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(246, 358, 80, 70) range(0, 10, 0, 1, 0.1) channel("DurationVariationRate") text("Duration Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 //Density
 rslider bounds(328, 148, 80, 70) range(0.5, 100, 14, 0.5, 0.1) channel("GrainDensity") text("Grain Density") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(368, 254, 80, 70) range(0, 100, 0, 0.5, 0.1) channel("DensityVariationRange") text("Density Range") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-rslider bounds(368, 328, 80, 70) range(0, 10, 0, 1, 0.1) channel("DensityVariationRate") text("Density Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(370, 284, 80, 70) range(0, 100, 0, 0.5, 0.1) channel("DensityVariationRange") text("Density Range") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+rslider bounds(370, 358, 80, 70) range(0, 10, 0, 1, 0.1) channel("DensityVariationRate") text("Density Rate") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 //Phase
 rslider bounds(494, 148, 80, 70) range(0, 1, 1, 1, 0.05) text("Phase Variation") channel("PhaseVariation") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 
@@ -130,7 +130,7 @@ rslider bounds(872, 148, 80, 70) range(0, 1, 0, 1, 0.01) text("Amount") channel(
 //GLOBALS
 label bounds(1024, 20, 103, 20) fontcolour(255, 255, 255, 255) text("GLOBAL")
 hslider bounds(976, 80, 200, 36) range(0, 1, 0.5, 1, 0.01) text("Stereo Pan") channel("GlobalPan") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
-hslider bounds(978, 746, 200, 36) range(0, 0.5, 0, 1, 0.01) text("Grain Width") channel("GrainWidth") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
+hslider bounds(244, 224, 332, 36) range(0, 0.5, 0.5, 1, 0.01) text("Stereo Width") channel("GrainWidth") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255)
 hslider bounds(976, 44, 200, 36) range(0, 1, 1, 1, 0.01) text("Volume") channel("GlobalVolume") trackercolour(188, 151, 49, 255) textcolour(255, 255, 255, 255) fontcolour(255, 255, 255, 255)
 
 label bounds(998, 168, 160, 20) fontcolour(255, 255, 255, 255) text("AMP ENVELOPE")
@@ -146,13 +146,12 @@ hslider bounds(976, 116, 200, 36) range(-2400, 2400, 0, 1, 0.01) channel("Global
 </CsOptions>
 <CsInstruments>
 //TODO:
+//Fix filter
 //Refactor windowing envelopes
-//Fix polyphony distortion
-//Refactor filter and filter envelope into "Synthesizer" leaving "Processing" only for AM/RM
+//Fix polyphony distortion - issue with chnmix going out of Synthesis
+//Figure out panning and pan lfo
+//UI review
 
-//UI review to include Grain Stereo Width
-//BACKLOG:
-//Add an extra oscillator that loads audio files that will also be granulated
 ksmps = 32
 nchnls = 2
 0dbfs = 1
@@ -175,137 +174,216 @@ giSaw ftgen 13, 0, 4096, 10, 1, .5, .333, .25, .2, .166, .143, .125, .111, .1, .
 giSquare ftgen 14, 0, 4096, 10, 1, 0, .333, 0, .2, 0, .143, 0, .111, 0, .0909, 0, .077, 0, .0666, 0, .0588
 giPulse ftgen 15, 0, 4096, 10, 1, 1, 1, 1, 0.7, 0.5, 0.3, 0.1
 
+opcode linearRandom_Low, i, iii
+    iMin, iMax, iMaxCount xin
+    
+    iCount = 0
+    iRandom = iMax
+    
+    until iCount == iMaxCount do
+        iUniRandom random iMin,iMax
+        iRandom = iUniRandom < iRandom ? iUniRandom : iRandom
+        iCount += 1
+    enduntil
+        xout iRandom
+endop
+
+opcode linearRandom_High, i, iii
+    iMin, iMax, iMaxCount xin
+    
+    iCount = 0
+    iRandom = iMin
+    
+    until iCount == iMaxCount do
+        iUniRandom random iMin,iMax
+        iRandom = iUniRandom > iRandom ? iUniRandom : iRandom
+        iCount += 1
+    enduntil
+        xout iRandom
+endop
+
+
 instr Trigger
     //Grain Duration
-    kDur chnget "GrainDuration"
-    kDurVarRange chnget "DurationVariationRange"
-    kDurVarRate chnget "DurationVariationRate"
-    kLfoDurRange chnget "LfoDurRange"
-    kLfoDurFreq chnget "LfoDurFreq"
+        kDur chnget "GrainDuration"
+        kDurVarRange chnget "DurationVariationRange"
+        kDurVarRate chnget "DurationVariationRate"
+        
+        kLfoDurRange chnget "LfoDurRange"
+        kLfoDurFreq chnget "LfoDurFreq"
     
-    kDurVar jitter kDurVarRange, .2 * kDurVarRate, 1 * kDurVarRate
-    kLfoDur lfo kLfoDurRange, kLfoDurFreq
-    kDurTotal limit kDur + kDurVar + kLfoDur , 0.01, 1
+        kDurVar jitter kDurVarRange, .2 * kDurVarRate, 1 * kDurVarRate
+        kLfoDur lfo kLfoDurRange, kLfoDurFreq
+        kDurTotal limit kDur + kDurVar + kLfoDur , 0.01, 1
     
     //Grain Density
-    kDensity chnget "GrainDensity"
-    kDensityVarRange chnget "DensityVariationRange"
-    kDensityVarRate chnget "DensityVariationRate"
-    kLfoDensityRange chnget "LfoDensityRange"
-    kLfoDensityFreq chnget "LfoDensityFreq"
+        kDensity chnget "GrainDensity"
+        kDensityVarRange chnget "DensityVariationRange"
+        kDensityVarRate chnget "DensityVariationRate"
+        
+        kLfoDensityRange chnget "LfoDensityRange"
+        kLfoDensityFreq chnget "LfoDensityFreq"
     
-    kLfoDensity lfo kLfoDensityRange, kLfoDensityFreq 
-    kDensityVar jitter kDensityVarRange, .2 * kDensityVarRate, 1 * kDensityVarRate
-    kDensityTotal limit kDensity + kDensityVar + kLfoDensity, 0.5, 80
-    kTrig metro kDensityTotal
+        kLfoDensity lfo kLfoDensityRange, kLfoDensityFreq 
+        kDensityVar jitter kDensityVarRange, .2 * kDensityVarRate, 1 * kDensityVarRate
+        kDensityTotal limit kDensity + kDensityVar + kLfoDensity, 0.5, 80
+        kTrig metro kDensityTotal
     
     //Phase Variation
-    kPhase init 1 
-    kPhaseVar chnget "PhaseVariation"
-    kPhaseVar rand kPhaseVar
+        kPhaseVar chnget "PhaseVariation"
+        kPhaseVar rand kPhaseVar
 
     //Pitch
-    iFreqMIDI cpsmidi
-    kPitchVar chnget "PitchVariation"
-    kPitchVar rand kPitchVar
+        iFreqMIDI cpsmidi
+        kPitchVar chnget "PitchVariation"
+        
+        kFreqVarRange chnget "FrequencyVariationRange"
+        kFreqVarRate chnget "FrequencyVariationRate"
+        kGlobalTuning chnget "GlobalTuning"
     
-    kLfoTuningRange chnget "LfoTuningRange"
-    kLfoTuningFreq chnget "LfoTuningFreq"
-    kLfoTuning lfo kLfoTuningRange, kLfoTuningFreq
+        kLfoTuningRange chnget "LfoTuningRange"
+        kLfoTuningFreq chnget "LfoTuningFreq"
+        
+        kLfoTuning lfo kLfoTuningRange, kLfoTuningFreq       
+                
+        kPitchVar rand kPitchVar
+        kGlobalTuning = cent(kGlobalTuning)
+    
+        kFreqVar jitter kFreqVarRange, .2 * kFreqVarRate, 1 * kFreqVarRate
+        gkFreqTotal = ((iFreqMIDI + kFreqVar) * kGlobalTuning)
     
     //Spatialization
-    kGrainWidth chnget "GrainWidth"
-    kRandomPan rand kGrainWidth, 0
+        kGrainWidth chnget "GrainWidth"
+        kRandomPan random 0, kGrainWidth
     
-    //MIDI ON DEFINED VARIABLES
-    //Filter Envelope
-    giFilterFreq chnget "FilterFreq"
-    giFilterRange chnget "FilterRange"
-    giFilterType chnget "FilterSelection"
-    giFilterAttack chnget "FilterAttack"
-    giFilterDecay chnget "FilterDecay"
-    giFilterSustain chnget "FilterSustain"
-    giFilterRelease chnget "FilterRelease"
-    
-    //Amp envelope
-    iAttack chnget "AmpAttack"
-    iDecay chnget "AmpDecay"
-    iSustain chnget "AmpSustain"
-    iRelease chnget "AmpRelease"
+    //Filter
+        iFilterFreq chnget "FilterFreq"
+        iFilterRange chnget "FilterRange"
+        iFilterAttack chnget "FilterAttack"
+        iFilterDecay chnget "FilterDecay"
+        iFilterSustain chnget "FilterSustain"
+        iFilterRelease chnget "FilterRelease"
+        giFilterType chnget "FilterSelection"
+        giFilterType -= 1
+ 
+        gkFilterFreq chnget "FilterFreq"
+        gkFilterReson chnget "FilterReson"
+        gkFilterReson port gkFilterReson, 0.02
+        gkFilterBW chnget "FilterBW"
+        gkFilterBW port gkFilterBW, 0.02
 
-    kAmpEnv mxadsr iAttack, iDecay, iSustain, iRelease
-    kAmpEnv port kAmpEnv, 0.05
-    aAmpEnv interp kAmpEnv
+        gkFilterNoteTracking chnget "FilterNoteTrack"
+    
+            //Filter Envelope:    
+            if iFilterAttack > 0.01 then
+                kFilterEnv  expsegr iFilterRange, iFilterAttack, iFilterFreq, iFilterDecay, iFilterSustain * iFilterFreq, iFilterRelease, iFilterRange
+            else
+                kFilterEnv  expsegr iFilterFreq, iFilterDecay, iFilterSustain * iFilterFreq, iFilterRelease, iFilterRange
+            endif
+                
+            //Allows filter frequency to be modulated in real time
+            kcc1Trig changed2 gkFilterFreq
+            kcc1Trig2 init 0
         
-    schedkwhen kTrig, 0, 0, "Synthesis", 0, kDurTotal, iFreqMIDI + kPitchVar, abs(kPhaseVar), kRandomPan, kAmpEnv, kLfoTuning
-    ;                                                   p4                      p5              p6          p7          p8
-endin
+            if kcc1Trig == 1 then
+                kcc1Trig2 = 1
+            endif
 
+            if release() == 0 then
+                if kcc1Trig2 == 1 then
+                    kFilterFreqSum = gkFilterFreq
+                else
+                    kFilterFreqSum = kFilterEnv
+                endif  
+            else
+                kFilterFreqSum = kFilterEnv
+            endif
+    
+            //Ports envelope
+            gkFilterFreqSum port kFilterFreqSum, 0.2
+
+    //Amp envelope
+        iAttack chnget "AmpAttack"
+        iDecay chnget "AmpDecay"
+        iSustain chnget "AmpSustain"
+        iRelease chnget "AmpRelease"
+
+        kAmpEnv mxadsr iAttack, iDecay, iSustain, iRelease
+        kAmpEnv port kAmpEnv, 0.05
+        aAmpEnv interp kAmpEnv
+
+
+    //Granulation 
+        schedkwhen kTrig, 0, 0, "Synthesis", 0, kDurTotal, gkFreqTotal + kPitchVar, abs(kPhaseVar), kRandomPan, kAmpEnv, kLfoTuning//, kFilterEnvTotal
+        ;                                                   p4                      p5              p6          p7          p8          p9
+endin
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 instr Synthesis
     //Oscillator1
-    kOsc1Vol chnget "Oscillator1Volume"
-    kOsc1Semi chnget "Oscillator1Semitone"
-    kOsc1Cent chnget "Oscillator1Cents"
-    kFn1 chnget "WaveformSelection1"
+        kOsc1Vol chnget "Oscillator1Volume"
+        kOsc1Semi chnget "Oscillator1Semitone"
+        kOsc1Cent chnget "Oscillator1Cents"
+        kFn1 chnget "WaveformSelection1"
     
-    kOsc1Vol port kOsc1Vol, 0.02
-    kOsc1Cent port kOsc1Cent, 0.02
+        kOsc1Vol port kOsc1Vol, 0.02
+        kOsc1Cent port kOsc1Cent, 0.02
     
-    kFn1 = kFn1 + 10 //Offset for waveform f-table numbers
-    kOsc1Semi = semitone(kOsc1Semi)
-    kOsc1Cent = cent(kOsc1Cent)
+        kFn1 = kFn1 + 10 //Offset for waveform f-table numbers
+        kOsc1Semi = semitone(kOsc1Semi)
+        kOsc1Cent = cent(kOsc1Cent)
     
     //Oscillator2
-    kOsc2Vol chnget "Oscillator2Volume"
-    kOsc2Semi chnget "Oscillator2Semitone"
-    kOsc2Cent chnget "Oscillator2Cents"  
-    kFn2 chnget "WaveformSelection2"
+        kOsc2Vol chnget "Oscillator2Volume"
+        kOsc2Semi chnget "Oscillator2Semitone"
+        kOsc2Cent chnget "Oscillator2Cents"  
+        kFn2 chnget "WaveformSelection2"
 
-    kOsc2Vol port kOsc2Vol, 0.02
-    kOsc2Cent port kOsc2Cent, 0.02
+        kOsc2Vol port kOsc2Vol, 0.02
+        kOsc2Cent port kOsc2Cent, 0.02
    
-    kFn2 = kFn2 + 10
-    kOsc2Semi = semitone(kOsc2Semi)
-    kOsc2Cent = cent(kOsc2Cent)
+        kFn2 = kFn2 + 10
+        kOsc2Semi = semitone(kOsc2Semi)
+        kOsc2Cent = cent(kOsc2Cent)
     
     //Oscillator3
-    kOsc3Vol chnget "Oscillator3Volume"
-    kOsc3Semi chnget "Oscillator3Semitone"
-    kOsc3Cent chnget "Oscillator3Cent"
-    kFn3 chnget "WaveformSelection3"
+        kOsc3Vol chnget "Oscillator3Volume"
+        kOsc3Semi chnget "Oscillator3Semitone"
+        kOsc3Cent chnget "Oscillator3Cent"
+        kFn3 chnget "WaveformSelection3"
     
-    kOsc3Vol port kOsc3Vol, 0.02
-    kOsc3Cent port kOsc3Cent, 0.02
+        kOsc3Vol port kOsc3Vol, 0.02
+        kOsc3Cent port kOsc3Cent, 0.02
     
-    kFn3 = kFn3 + 10
-    kOsc3Semi = semitone(kOsc3Semi)
-    kOsc3Cent = semitone(kOsc3Cent)
+        kFn3 = kFn3 + 10
+        kOsc3Semi = semitone(kOsc3Semi)
+        kOsc3Cent = semitone(kOsc3Cent)
     
-    //Tuning
-    kFreqVarRange chnget "FrequencyVariationRange"
-    kFreqVarRate chnget "FrequencyVariationRate"
-    kGlobalTuning chnget "GlobalTuning"
-
-    kGlobalTuning = cent(kGlobalTuning + p8)
-    
-    kFreqVar jitter kFreqVarRange, .2 * kFreqVarRate, 1 * kFreqVarRate
-    gkFreqTotal = ((p4 + kFreqVar) * kGlobalTuning)
 
     //Windowing
-    iWfn chnget "WindowingSelection"
-    aEnv  linseg  0,0.01,0.2,p3-0.02,0.2,0.01,0
+        iWfn chnget "WindowingSelection"
+        aWindowEnv  linseg  0,0.015,0.2,p3-0.03,0.2,0.015,0
 
-    aGrain1 oscilikt aEnv * kOsc1Vol * .5, gkFreqTotal * kOsc1Semi * kOsc1Cent, kFn1, p5, 0
-    aGrain2 oscilikt aEnv *kOsc2Vol * .5, gkFreqTotal * kOsc2Semi * kOsc2Cent, kFn2, p5, 0
-    aGrain3 oscilikt aEnv *kOsc3Vol * .5, gkFreqTotal * kOsc3Semi * kOsc3Cent, kFn3, p5, 0
+    //Oscilattors
+        aGrain1 oscilikt aWindowEnv * kOsc1Vol * .5, (p4 * kOsc1Semi * kOsc1Cent) + p8, kFn1, p5, 0
+        aGrain2 oscilikt aWindowEnv *kOsc2Vol * .5, (p4 * kOsc2Semi * kOsc2Cent) + p8, kFn2, p5, 0
+        aGrain3 oscilikt aWindowEnv *kOsc3Vol * .5, (p4 * kOsc3Semi * kOsc3Cent) + p8, kFn3, p5, 0
+        
+        aAmpEnv interp p7
+        aGrainSum = (aGrain1 + aGrain2 + aGrain3)* aAmpEnv
+        
+    //Random Pan Position
+        iRandomLow linearRandom_Low -p6, 0, 18
+        iRandomHigh linearRandom_High 0, p6, 18
+        iRandomArray[] fillarray iRandomLow, iRandomHigh
+        
+        iRandomIndexSelector random 0, 1
+        iRandomIndex = iRandomIndexSelector < 0.5 ? 0 : 1
+        aGrainOutL, aGrainOutR pan2 aGrainSum, .5 + iRandomArray[iRandomIndex]
     
-    aGrainSum sum aGrain1, aGrain2, aGrain3
-    aAmpEnv interp p7
-    aGrainOutL, aGrainOutR pan2 aGrainSum * aAmpEnv, .5 + p6
- 
-    ;outs aGrainOutL, aGrainOutR
-    chnmix aGrainOutL, "GrainOutL"
-    chnmix aGrainOutR, "GrainOutR"
+    //Output
+        outs aGrainOutL, aGrainOutR
+        ;chnmix aGrainOutL, "GrainOutL"
+        ;chnmix aGrainOutR, "GrainOutR"
     
     ;p4 = pitch
     ;p5 = phase variation
@@ -313,229 +391,185 @@ instr Synthesis
     ;p7 = amp envelope
     ;p8 = tuning lfo
 endin
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+instr Processing   
+    //PANIC
+            kPanic chnget "Panic"
+         if kPanic == 1 then  
+            turnoff 
+         endif
 
-instr Processing
-//CHNGET:
     //SIGNAL
-    aGrainL chnget "GrainOutL"
-    aGrainR chnget "GrainOutR"
+        aGrainL chnget "GrainOutL"
+        aGrainR chnget "GrainOutR"
     
-    //Amp Envelope
+    //Globals
+        kGlobalPan chnget "GlobalPan"
+        gkGlobalVol chnget "GlobalVolume"
+        kGlobalPan port kGlobalPan, 0.02
+        gkGlobalVol port gkGlobalVol, 0.1
+        
+        kLfoAmpRange chnget "LfoAmpRange"
+        kLfoAmpFreq chnget "LfoAmpFreq"
+        kLfoPanRange chnget "LfoPanRange"
+        kLfoPanFreq chnget "LfoPanFreq" 
+        
+        kPanLfo lfo kLfoPanRange, kLfoPanFreq
+        kPanLfo += 1
+        aAmpLfo lfo kLfoAmpRange, kLfoAmpFreq
+        aAmpLfo += 0.5
+
+    //Modulation
+        kRMFreq chnget "RMFreq"
+        kRMAmp chnget "RMAmp"
+        kAMFreq chnget "AMFreq"
+        kAMAmp chnget "AMAmp"
+        kFMFreq chnget "FMFreq"
+        kFMAmp chnget "FMAmp"
+        kModRouting chnget "ModRouting"
+        kRMFreq port kRMFreq, 0.02
+        kRMAmp port kRMAmp, 0.02
+        kAMFreq port kAMFreq, 0.02
+        kAMAmp port kAMAmp, 0.02
+        kLfoModAmpRange chnget "LfoModAmpRange"
+        kLfoModAmpFreq chnget "LfoModAmpFreq"
+    
+        kLfoModFreqRange chnget "LfoModFreqRange"
+        kLfoModFreqFreq chnget "LfoModFreqFreq"
+        
+        kModAmpLfo lfo kLfoModAmpRange, kLfoModAmpFreq
+        kModAmpLfo += 0.5
+        kModFreqLfo lfo kLfoModFreqRange, kLfoModFreqFreq
 
     //Filter
-    kFilterFreq chnget "FilterFreq"
-    kFilterReson chnget "FilterReson"
-    kFilterBW chnget "FilterBW"
-
-    kFilterNoteTracking chnget "FilterNoteTrack"
-
-    //Globals
-    kGlobalPan chnget "GlobalPan"
-    gkGlobalVol chnget "GlobalVolume"
-    
-    //LFO
-    kLfoFilterFreq chnget "LfoFilterFreq"
-    kLfoFilterRange chnget "LfoFilterRange"
-    
-    kLfoAmpRange chnget "LfoAmpRange"
-    kLfoAmpFreq chnget "LfoAmpFreq"
-    
-    kLfoPanRange chnget "LfoPanRange"
-    kLfoPanFreq chnget "LfoPanFreq" 
-    
-    kLfoModAmpRange chnget "LfoModAmpRange"
-    kLfoModAmpFreq chnget "LfoModAmpFreq"
-    
-    kLfoModFreqRange chnget "LfoModFreqRange"
-    kLfoModFreqFreq chnget "LfoModFreqFreq"
-    //Modulation
-    kRMFreq chnget "RMFreq"
-    kRMAmp chnget "RMAmp"
-    kAMFreq chnget "AMFreq"
-    kAMAmp chnget "AMAmp"
-    kFMFreq chnget "FMFreq"
-    kFMAmp chnget "FMAmp"
-    kModRouting chnget "ModRouting"
-    
-//PANIC
-    kPanic chnget "Panic"
- if kPanic == 1 then  
-    turnoff 
- endif
-
+        kLfoFilterFreq chnget "LfoFilterFreq"
+        kLfoFilterRange chnget "LfoFilterRange"
  
-//PORT:
-    kFilterReson port kFilterReson, 0.02
-  
-    kGlobalPan port kGlobalPan, 0.02
-    gkGlobalVol port gkGlobalVol, 0.1
-    
-    kRMFreq port kRMFreq, 0.02
-    kRMAmp port kRMAmp, 0.02
-    kAMFreq port kAMFreq, 0.02
-    kAMAmp port kAMAmp, 0.02
-    
-//LFOs
-    kLfoFilter lfo kLfoFilterRange, kLfoFilterFreq
-    kLfoFilter += 0.5
 
-    kPanLfo lfo kLfoPanRange, kLfoPanFreq
-    kPanLfo += 1
-    aAmpLfo lfo kLfoAmpRange, kLfoAmpFreq
-    aAmpLfo += 0.5
+    //MODULATION
+        //RM
+        kRMFreq = cent(kRMFreq)
+        aRMOsc poscil 1, (kRMFreq * gkFreqTotal) + kModFreqLfo
     
-    kModAmpLfo lfo kLfoModAmpRange, kLfoModAmpFreq
-    kModAmpLfo += 0.5
-    kModFreqLfo lfo kLfoModFreqRange, kLfoModFreqFreq
-
-//MODULATION
-    //RM
-    kRMFreq = cent(kRMFreq)
-    aRMOsc poscil 1, (kRMFreq * gkFreqTotal) + kModFreqLfo
+        aRingModSigL ntrpol aGrainL, aRMOsc * aGrainL, kRMAmp * kModAmpLfo
+        aRingModSigR ntrpol aGrainR, aRMOsc * aGrainR, kRMAmp * kModAmpLfo
     
-    aRingModSigL ntrpol aGrainL, aRMOsc * aGrainL, kRMAmp * kModAmpLfo
-    aRingModSigR ntrpol aGrainR, aRMOsc * aGrainR, kRMAmp * kModAmpLfo
-    
-    //AM
-    kAMFreq = cent(kAMFreq)
-    aAMOsc poscil 0.5, (kAMFreq * gkFreqTotal) + kModFreqLfo
-    aAMOsc += 0.5
+        //AM
+        kAMFreq = cent(kAMFreq)
+        aAMOsc poscil 0.5, (kAMFreq * gkFreqTotal) + kModFreqLfo
+        aAMOsc += 0.5
      
-    aAmpModSigL ntrpol aGrainL, aAMOsc * aGrainL, kAMAmp * kModAmpLfo
-    aAmpModSigR ntrpol aGrainR, aAMOsc * aGrainR, kAMAmp * kModAmpLfo
+        aAmpModSigL ntrpol aGrainL, aAMOsc * aGrainL, kAMAmp * kModAmpLfo
+        aAmpModSigR ntrpol aGrainR, aAMOsc * aGrainR, kAMAmp * kModAmpLfo
 
-    //MOD SUM
-    aGrainModL = (aRingModSigL * aAmpModSigL) * gkGlobalVol * aAmpLfo  
-    aGrainModR = (aRingModSigR * aAmpModSigR) * gkGlobalVol * aAmpLfo  
+        //MOD SUM
+        aGrainModL = (aRingModSigL * aAmpModSigL) * gkGlobalVol * aAmpLfo  
+        aGrainModR = (aRingModSigR * aAmpModSigR) * gkGlobalVol * aAmpLfo  
    
-//FILTERING: 
-    //Envelope:    
-    if giFilterAttack > 0.01 then
-        kFilterEnv  expsegr giFilterRange, giFilterAttack, giFilterFreq, giFilterDecay, giFilterSustain * giFilterFreq, giFilterRelease, giFilterRange
-    else
-        kFilterEnv  expsegr giFilterFreq, giFilterDecay,giFilterSustain * giFilterFreq, giFilterRelease, giFilterRange
-    endif
-    
-    //Allows filter frequency to be modulated in real time
-    kcc1Trig changed2 kFilterFreq
-    kcc1Trig2 init 0
+    //FILTERING: 
+        gkLfoFilter lfo kLfoFilterRange, kLfoFilterFreq
+        gkLfoFilter += 0.5
         
-    if kcc1Trig == 1 then
-        kcc1Trig2 = 1
-    endif
-
-    if release() == 0 then
-        if kcc1Trig2 == 1 then
-            kFilterFreqSum = kFilterFreq
+        kFilterEnvTotal ntrpol 0, 20000, gkFilterFreqSum * gkLfoFilter
+        //Frequency offset
+        aFilterEnv interp kFilterEnvTotal
+        if gkFilterNoteTracking == 0 then
+            gkFilterFreqTotal = gkLfoFilter + aFilterEnv
         else
-            kFilterFreqSum = kFilterEnv
-        endif  
-    else
-        kFilterFreqSum = kFilterEnv
-    endif
-    
-    //Ports and interpolates envelope
-    kFilterFreqSum port kFilterFreqSum, 0.2
-    
-    kFilterEnvTotal ntrpol 0, 20000, kFilterFreqSum * kLfoFilter
-    aFilterEnv interp kFilterEnvTotal
-    
-    //Frequency offset
-    if kFilterNoteTracking == 0 then
-        kFilterFreqTotal = kLfoFilter + aFilterEnv
-    else
-        kFilterFreqTotal = kLfoFilter + aFilterEnv + gkFreqTotal;kFreqTotal = cpsmidi + global cent tuning + frequency randomization values
-    endif
-    kFilterFreqTotal limit kFilterFreqTotal, 20, 20000
+            gkFilterFreqTotal = gkLfoFilter + aFilterEnv + gkFreqTotal;kFreqTotal = cpsmidi + global cent tuning + frequency randomization values
+        endif
+        kFilterFreqTotal limit gkFilterFreqTotal, 20, 20000
   
-    //Filter type selection
-    if giFilterType == 3 then
-        aSigFilterL butterbp aGrainModL, kFilterFreqTotal, kFilterBW
-        aSigFilterR butterbp aGrainModR, kFilterFreqTotal, kFilterBW
-    else
-        kFilterReson limit kFilterReson, 1, 50
-        aSigFilterL bqrez aGrainModL, kFilterFreqTotal, kFilterReson, giFilterType -1   
-        aSigFilterR bqrez aGrainModR, kFilterFreqTotal, kFilterReson, giFilterType -1   
-    endif
+        //Filter type selection
+        if giFilterType == 2 then
+            aSigFilterL butterbp aGrainModL, kFilterFreqTotal, gkFilterBW
+            aSigFilterR butterbp aGrainModR, kFilterFreqTotal, gkFilterBW
+            prints "BANDPASS", 0
+        else
+            gkFilterReson limit gkFilterReson, 1, 50
+            aSigFilterL bqrez aGrainModL, kFilterFreqTotal, gkFilterReson, giFilterType -1   
+            aSigFilterR bqrez aGrainModR, kFilterFreqTotal, gkFilterReson, giFilterType -1   
+        endif
+        
     
-//PANNING + OUTPUT
-    //aSigL, aSigR pan2 aSigFilter, kGlobalPan * kPanLfo
-    chnmix aSigFilterL, "SigL"
-    chnmix aSigFilterR, "SigR" 
+    //PANNING + OUTPUT
+        //aSigL, aSigR pan2 aSigFilter, kGlobalPan * kPanLfo            
+        chnmix aSigFilterL, "SigL"
+        chnmix aSigFilterR, "SigR" 
 endin
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 instr Reverb
-//CHNGET
-    aSigL chnget "SigL"
-    aSigR chnget "SigR"
-    kReverbSize chnget "ReverbSize"
-    kReverbMix chnget "ReverbMix"
-    kReverbSend chnget "ReverbSend"
-    gkReverbBypass chnget "ReverbBypass"
+    //CHNGET
+        aSigL chnget "SigL"
+        aSigR chnget "SigR"
+        kReverbSize chnget "ReverbSize"
+        kReverbMix chnget "ReverbMix"
+        kReverbSend chnget "ReverbSend"
+        gkReverbBypass chnget "ReverbBypass"
 
-//PORTK
-    kReverbMix port kReverbMix, 0.02
-    kReverbSend portk kReverbSend, 0.02
-    kReverbSize portk kReverbSize, 0.02
+    //PORTK
+        kReverbMix port kReverbMix, 0.02
+        kReverbSend portk kReverbSend, 0.02
+        kReverbSize portk kReverbSize, 0.02
     
- if kReverbSend > 0 then    
-    //REVERB
-    aVerbL, aVerbR reverbsc aSigL * kReverbSend, aSigR * kReverbSend, kReverbSize, 6000  
+     if kReverbSend > 0 then    
+        //REVERB
+        aVerbL, aVerbR reverbsc aSigL * kReverbSend, aSigR * kReverbSend, kReverbSize, 6000  
     
-    //MIX
-    if gkReverbBypass == 0 then
-        aVerbMixL ntrpol aSigL, aVerbL, kReverbMix
-        aVerbMixR ntrpol aSigR, aVerbR, kReverbMix
-        outs aVerbMixL, aVerbMixR
-    endif
- endif
+        //MIX
+        if gkReverbBypass == 0 then
+            aVerbMixL ntrpol aSigL, aVerbL, kReverbMix
+            aVerbMixR ntrpol aSigR, aVerbR, kReverbMix
+            outs aVerbMixL, aVerbMixR
+        endif
+     endif
 
 endin
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 instr Delay
-//CHNGET
-    aSigL chnget "SigL"
-    aSigR chnget "SigR"
-    kDelaySend chnget "DelaySend"
-    kDelayMix chnget "DelayMix"
-    kDelayTimeLeft chnget "DelayTimeLeft"
-    kDelayTimeRight chnget "DelayTimeRight"
-    kDelayFeedback chnget "DelayFeedback"
-    gkDelayBypass chnget "DelayBypass"
+    //CHNGET
+        aSigL chnget "SigL"
+        aSigR chnget "SigR"
+        kDelaySend chnget "DelaySend"
+        kDelayMix chnget "DelayMix"
+        kDelayTimeLeft chnget "DelayTimeLeft"
+        kDelayTimeRight chnget "DelayTimeRight"
+        kDelayFeedback chnget "DelayFeedback"
+        gkDelayBypass chnget "DelayBypass"
 
-//PORTK
-    kDelayMix port kDelayMix, 0.02
-    kDelaySend portk kDelaySend, 0.02
-    kDelayTimeLeft portk kDelayTimeLeft, 0.02
-    kDelayTimeRight portk kDelayTimeRight, 0.02
-    kDelayFeedBack portk kDelayFeedback, 0.02
+    //PORTK
+        kDelayMix port kDelayMix, 0.02
+        kDelaySend portk kDelaySend, 0.02
+        kDelayTimeLeft portk kDelayTimeLeft, 0.02
+        kDelayTimeRight portk kDelayTimeRight, 0.02
+        kDelayFeedBack portk kDelayFeedback, 0.02
 
- if kDelaySend > 0 then
-    //DELAY
-    aBufferOutL delayr 10
-    aTapL       deltapi kDelayTimeLeft
-                delayw (aSigL * kDelaySend) + (aTapL * kDelayFeedback)
-    aBufferOutR delayr 10
-    aTapR       deltapi kDelayTimeRight
-                delayw (aSigR * kDelaySend) + (aTapR * kDelayFeedback)
+     if kDelaySend > 0 then
+        //DELAY
+        aBufferOutL delayr 10
+        aTapL       deltapi kDelayTimeLeft
+                    delayw (aSigL * kDelaySend) + (aTapL * kDelayFeedback)
+        aBufferOutR delayr 10
+        aTapR       deltapi kDelayTimeRight
+                    delayw (aSigR * kDelaySend) + (aTapR * kDelayFeedback)
     
-    if gkDelayBypass == 0 then            
-        aDelayMixL ntrpol aSigL, aTapL, kDelayMix
-        aDelayMixR ntrpol aSigR, aTapR, kDelayMix
-        outs aDelayMixL, aDelayMixR
-    endif       
- endif
+        if gkDelayBypass == 0 then            
+            aDelayMixL ntrpol aSigL, aTapL, kDelayMix
+            aDelayMixR ntrpol aSigR, aTapR, kDelayMix
+            outs aDelayMixL, aDelayMixR
+        endif       
+     endif
 
- //Outputs dry signal only if both effects are bypassed
- if gkDelayBypass == 1 && gkReverbBypass == 1 then
-    outs aSigL, aSigR
- endif
+     //Outputs dry signal only if both effects are bypassed
+         if gkDelayBypass == 1 && gkReverbBypass == 1 then
+            outs aSigL, aSigR
+         endif
  
-//CLEARS SIGNAL
-    chnclear "SigL"
-    chnclear "SigR"
-    chnclear "GrainOutL" 
-    chnclear "GrainOutR"  
+    //CLEARS SIGNAL
+        chnclear "SigL"
+        chnclear "SigR"
+        chnclear "GrainOutL" 
+        chnclear "GrainOutR"  
 endin
 </CsInstruments>
 <CsScore>

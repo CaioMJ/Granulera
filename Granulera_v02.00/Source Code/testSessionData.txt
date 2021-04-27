@@ -21,7 +21,7 @@
            LfoPanFreq="0.0" LfoTuningRange="0.0" LfoTuningFreq="0.0" LfoModAmpRange="0.0"
            LfoModAmpFreq="0.0" LfoModFreqRange="0.0" LfoModFreqFreq="0.0"
            RMFreq="0.0" RMAmp="0.0" AMFreq="0.0" AMAmp="0.0" GlobalPan="0.5"
-           GrainWidth="0.0" GlobalVolume="1.0" AmpAttack="0.1000000014901161"
+           GrainWidth="0.5" GlobalVolume="1.0" AmpAttack="0.1000000014901161"
            AmpDecay="0.1000000014901161" AmpSustain="1.0" AmpRelease="0.4000000059604645"
            GlobalTuning="0.0"/>
 </CABBAGE_PRESETS>
