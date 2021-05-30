@@ -1,6 +1,6 @@
 <Cabbage> bounds(0, 0, 0, 0)
 //HEADER AND UTILITIES
-form caption("Granulera by Caio M. Jiacomini") size(1200,800), colour(0, 0, 0), pluginId("cjb1")
+form caption("Granulera by Caio M. Jiacomini") size(1200,800), colour(0, 0, 0), pluginId("cjb1"), guiMode ("queue")
 label bounds(408, 6, 344, 45) fontColour(188, 151, 49, 255) text("G R A N U L E R A")
 label bounds(484, 56, 212, 21) text("by Caio M. Jiacomini") colour(255, 255, 255, 0) fontColour(255, 255, 255, 255)
 keyboard bounds(4, 722, 1194, 77)
@@ -64,11 +64,11 @@ label bounds(352, 448, 117, 20) fontColour(255, 255, 255, 255) text("F I L T E R
 label bounds(378, 480, 89, 15) fontColour(255, 255, 255, 255) text("Filter Type")
 checkbox bounds(250, 474, 120, 26)  channel("FilterNoteTrack") text("Key Tracking")  fontColour:0(255, 255, 255, 255) fontColour:1(255, 255, 255, 255) colour:1(188, 151, 49, 255) shape("circle") colour:0(128, 128, 128, 255) value(1)
 combobox bounds(472, 477, 87, 20) text("Low Pass", "High Pass", "Band Pass") fontColour(188, 151, 49, 255) channel("FilterSelection")
-rslider bounds(244, 510, 80, 70) range(0.001, 1, 1, 0.5, 0.001) text("Frequency") channel("FilterFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255) identChannel("cc1")
-rslider bounds(328, 510, 80, 70) range(0.001, 1, 0.001, 0.5, 0.001) text("Start/End Freq") channel("FilterRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(286, 510, 80, 70) range(0.001, 1, 1, 0.5, 0.001) text("Frequency") channel("FilterFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255) identChannel("cc1")
+rslider bounds(370, 510, 80, 70) range(0.001, 1, 0.001, 0.5, 0.001) text("Start/End Freq") channel("FilterRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
-rslider bounds(412, 510, 80, 70) range(1, 50, 1, 0.5, 0.1) text("Resonance") channel("FilterReson") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-rslider bounds(494, 510, 80, 70) range(1, 5000, 1000, 0.5, 0.1) text("Bandwidth") channel("FilterBW") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(454, 510, 80, 70) range(1, 50, 1, 0.5, 0.1) text("Resonance") channel("FilterReson") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(454, 510, 80, 70) range(1, 5000, 1000, 0.5, 0.1) text("Bandwidth") channel("FilterBW") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255) visible(0)
 
 label bounds(340, 590, 160, 15) fontColour(255, 255, 255, 255) text("Filter Envelope")
 rslider bounds(244, 610, 80, 70) range(0.01, 10.01, 0, 0.5, 0.01) text("Attack") channel("FilterAttack") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
@@ -482,9 +482,29 @@ instr Delay
     chnclear "SigL"
     chnclear "SigR"
 endin
+
+instr UiSwap
+
+    kSwap, kTrig1 cabbageGet "FilterSelection"
+    kReson init 1
+    kBW init 0
+    
+    if kSwap == 3 then
+        kBW = 1
+        kReson =  0
+    else
+        kBW = 0
+        kReson = 1
+    endif
+    
+    cabbageSet kTrig1, "FilterBW", "visible", kBW
+    cabbageSet kTrig1, "FilterReson", "visible", kReson
+    
+endin
 </CsInstruments>
 <CsScore>
 f0 z
+i "UiSwap" 0 999999999
 i "Delay" 0 999999999
 i "Reverb" 0 99999999
 </CsScore>
