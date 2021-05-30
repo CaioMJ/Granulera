@@ -16,27 +16,27 @@ button bounds(16, 666, 80, 40) text("PANIC", "PANIC") channel("Panic") colour:1(
 label bounds(298, 124, 97, 15) text("Windowing") fontColour(255, 255, 255, 255)
 combobox bounds(404, 122, 93, 20) text("Sync", "Hanning", "Blackman-Harris", "Gaussian", "Kaiser", "Rectangle", "") fontColour(188, 151, 49, 255) channel("WindowingSelection") value(2)
 
-label bounds(34, 114, 140, 20) text("OSCILLATOR 1") fontColour(255, 255, 255, 255)
-label bounds(12, 140, 82, 17) text("Waveform") fontColour(255, 255, 255, 255)
-combobox bounds(92, 138, 75, 23) text("Sine", "Triangle", "Sawtooth", "Square", "Pulse") fontColour(188, 151, 49, 255) channel("WaveformSelection1")
-hslider bounds(10, 168, 173, 37) range(0, 1, 1, 1, 0.01) text("Volume") channel("Oscillator1Volume") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(10, 204, 173, 37) range(-48, 48, 0, 1, 1) text("Semitone") channel("Oscillator1Semitone") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(10, 242, 173, 37) range(-100, 100, 0, 1, 1) text("Cents") channel("Oscillator1Cents") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+label bounds(28, 114, 160, 20) text("OSCILLATOR 1") fontColour(255, 255, 255, 255)
+label bounds(16, 140, 94, 18) text("Waveform") fontColour(255, 255, 255, 255)
+combobox bounds(116, 138, 75, 23) text("Sine", "Triangle", "Sawtooth", "Square", "Pulse") fontColour(188, 151, 49, 255) channel("WaveformSelection1")
+hslider bounds(12, 168, 200, 36) range(0, 1, 1, 1, 0.01) text("Volume") channel("Oscillator1Volume") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(12, 204, 200, 36) range(-48, 48, 0, 1, 1) text("Semitone") channel("Oscillator1Semitone") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(12, 242, 200, 36) range(-100, 100, 0, 1, 1) text("Cents") channel("Oscillator1Cents") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 
-label bounds(28, 302, 160, 19) fontColour(255, 255, 255, 255) text("OSCILLATOR 2")
-label bounds(30, 328, 78, 16) fontColour(255, 255, 255, 255) text("Waveform")
-combobox bounds(108, 326, 87, 22) channel("WaveformSelection2") fontColour(188, 151, 49, 255) text("Sine", "Triangle", "Sawtooth", "Square", "Pulse")
-hslider bounds(12, 350, 200, 36) channel("Oscillator2Volume") range(0, 1, 0, 1, 0.01) text("Volume") textcolour(255, 255, 255, 255) trackerColour(188, 151, 49, 255)
+label bounds(28, 302, 160, 20) fontColour(255, 255, 255, 255) text("OSCILLATOR 2")
+label bounds(16, 328, 94, 18) fontColour(255, 255, 255, 255) text("Waveform")
+combobox bounds(116, 326, 75, 23) channel("WaveformSelection2") fontColour(188, 151, 49, 255) text("Sine", "Triangle", "Sawtooth", "Square", "Pulse")
+hslider bounds(12, 350, 200, 36) channel("Oscillator2Volume") range(0, 1, 0, 1, 0.01) text("Volume") textColour(255, 255, 255, 255) trackerColour(188, 151, 49, 255)
 hslider bounds(12, 386, 200, 36) range(-48, 48, 0, 1, 1) text("Semitone") channel("Oscillator2Semitone") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 hslider bounds(12, 420, 200, 36) range(-100, 100, 0, 1, 1) text("Cents") channel("Oscillator2Cents") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
-label bounds(30, 490, 160, 19) fontColour(255, 255, 255, 255) text("OSCILLATOR 3")
-label bounds(16, 510, 94, 18) fontColour(255, 255, 255, 255) text("Waveform")
-combobox bounds(116, 510, 87, 22) fontColour(188, 151, 49, 255) text("Sine", "Triangle", "Sawtooth", "Square", "Pulse") channel("WaveformSelection3")
-hslider bounds(16, 530, 200, 36) range(0, 1, 0, 1, 0.01) text("Volume") channel("Oscillator3Volume") textcolour(255, 255, 255, 255) trackerColour(188, 151, 49, 255)
-hslider bounds(16, 566, 200, 36) range(-48, 48, 0, 1, 1) text("Semitone") channel("Oscillator3Semitone") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(16, 600, 200, 36) range(-100, 100, 0, 1, 1) text("Cents") channel ("Oscillator3Cents") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+label bounds(28, 486, 160, 20) fontColour(255, 255, 255, 255) text("OSCILLATOR 3")
+label bounds(16, 510, 94, 18) fontColour(255, 255, 255, 255) text("Waveform") channel("label34")
+combobox bounds(116, 510, 75, 22) fontColour(188, 151, 49, 255) text("Sine", "Triangle", "Sawtooth", "Square", "Pulse") channel("WaveformSelection3")
+hslider bounds(12, 530, 200, 36) range(0, 1, 0, 1, 0.01) text("Volume") channel("Oscillator3Volume") textColour(255, 255, 255, 255) trackerColour(188, 151, 49, 255)
+hslider bounds(12, 566, 200, 36) range(-48, 48, 0, 1, 1) text("Semitone") channel("Oscillator3Semitone") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(12, 600, 200, 36) range(-100, 100, 0, 1, 1) text("Cents") channel ("Oscillator3Cents") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 //GRAINS
 label bounds(358, 90, 99, 20) fontColour(255, 255, 255, 255) text("G R A I N S")
@@ -88,8 +88,8 @@ checkbox bounds(1090, 508, 85, 24)  channel("DelayBypass") text("Bypass")  fontC
 hslider bounds(976, 532, 200, 36) range(0, 1, 0, 1, 0.01) channel("DelaySend") text("Send") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 hslider bounds(976, 568, 200, 36) range(0, 1, 1, 1, 0.01) channel("DelayMix") text("Mix") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 hslider bounds(976, 604, 200, 36) range(0.05, 10, 0, 0.4, 0.01) channel("DelayTimeLeft") text("Time Left") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(976, 636, 200, 36) range(0.05, 10, 0, 0.4, 0.01) channel("DelayTimeRight") text("Time Right") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(976, 674, 200, 36) range(0, 1, 0, 1, 0.01) channel("DelayFeedback") text("Feedback") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(976, 640, 200, 36) range(0.05, 10, 0, 0.4, 0.01) channel("DelayTimeRight") text("Time Right") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(976, 676, 200, 36) range(0, 1, 0, 1, 0.01) channel("DelayFeedback") text("Feedback") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 //LFO
 label bounds(630, 396, 131, 15) fontColour(255, 255, 255, 255) text("Filter Frequency")
@@ -115,7 +115,7 @@ rslider bounds(872, 612, 80, 70) range(0, 0.5, 0, 1, 0.01) text("Amount") channe
 rslider bounds(792, 612, 80, 70) range(0, 15, 0, 0.5, 0.01) text("Frequency") channel("LfoModAmpFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 label bounds(624, 594, 151, 15) fontColour(255, 255, 255, 255) text("Modulation Tuning")
 rslider bounds(694, 612, 80, 70) range(0, 3600, 0, 0.5, 1) text("Amount") channel("LfoModFreqRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-rslider bounds(612, 612, 80, 70) range(0, 15, 0, 1, 0.01) text("Frequency") channel("LfoModFreqFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(614, 612, 80, 70) range(0, 15, 0, 1, 0.01) text("Frequency") channel("LfoModFreqFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 //MODULATION
 label bounds(696, 90, 203, 20) fontColour(255, 255, 255, 255) text("M O D U L A T I O N")

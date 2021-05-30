@@ -25,11 +25,11 @@
 			<key>type</key>
 			<string>aumu</string>
 			<key>version</key>
-			<integer>132362</integer>
+			<integer>132608</integer>
 		</dict>
 	</array>
 	<key>BuildMachineOSBuild</key>
-	<string>18G6032</string>
+	<string>18G9028</string>
 	<key>CFBundleDisplayName</key>
 	<string>CabbagePlugin</string>
 	<key>CFBundleExecutable</key>
@@ -43,7 +43,7 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.5.10</string>
+	<string>2.6</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -51,7 +51,7 @@
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2.5.10</string>
+	<string>2.6</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
