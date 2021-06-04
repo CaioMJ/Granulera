@@ -12,8 +12,7 @@ combobox bounds(4, 36, 269, 32) channelType("string") populate("*.snaps") fontCo
 filebutton bounds(140, 4, 64, 33) text("Save", "Save") mode("named preset")
 filebutton bounds(210, 4, 64, 33) text("Delete", "Delete") mode("remove preset")
 
-
-button bounds(16, 666, 80, 40) text("PANIC", "PANIC") channel("Panic") colour:1(255, 0, 0, 255) 
+button bounds(16, 664, 80, 40) text("PANIC", "PANIC") channel("Panic") colour:1(255, 0, 0, 255) 
 
 //OSCILLATORS
 label bounds(298, 124, 97, 15) text("Windowing") fontColour(255, 255, 255, 255)
@@ -21,25 +20,24 @@ combobox bounds(404, 122, 93, 20) text("Soft", "Medium", "Hard", "Rectangle") fo
 
 label bounds(34, 114, 140, 20) text("OSCILLATOR 1") fontColour(255, 255, 255, 255)
 label bounds(12, 140, 82, 17) text("Waveform") fontColour(255, 255, 255, 255)
-combobox bounds(92, 138, 75, 23) text("Sine", "Triangle", "Sawtooth", "Square", "Pulse") fontColour(188, 151, 49, 255) channel("WaveformSelection1")
-hslider bounds(10, 168, 173, 37) range(0, 1, 1, 1, 0.01) text("Volume") channel("Oscillator1Volume") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(10, 204, 173, 37) range(-48, 48, 0, 1, 1) text("Semitone") channel("Oscillator1Semitone") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(10, 242, 173, 37) range(-100, 100, 0, 1, 1) text("Cents") channel("Oscillator1Cents") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+combobox bounds(114, 138, 87, 22) text("Sine", "Triangle", "Sawtooth", "Square", "Pulse") fontColour(188, 151, 49, 255) channel("WaveformSelection1")
+hslider bounds(12, 168, 200, 36) range(0, 1, 1, 1, 0.01) text("Volume") channel("Oscillator1Volume") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(12, 204, 200, 36) range(-48, 48, 0, 1, 1) text("Semitone") channel("Oscillator1Semitone") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(12, 242, 200, 36) range(-100, 100, 0, 1, 1) text("Cents") channel("Oscillator1Cents") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
-
-label bounds(28, 302, 160, 19) fontColour(255, 255, 255, 255) text("OSCILLATOR 2")
-label bounds(30, 328, 78, 16) fontColour(255, 255, 255, 255) text("Waveform")
-combobox bounds(108, 326, 87, 22) channel("WaveformSelection2") fontColour(188, 151, 49, 255) text("Sine", "Triangle", "Sawtooth", "Square", "Pulse")
+label bounds(34, 302, 136, 19) fontColour(255, 255, 255, 255) text("OSCILLATOR 2") channel("label29")
+label bounds(12, 328, 82, 17) fontColour(255, 255, 255, 255) text("Waveform")
+combobox bounds(114, 326, 87, 22) channel("WaveformSelection2") fontColour(188, 151, 49, 255) text("Sine", "Triangle", "Sawtooth", "Square", "Pulse")
 hslider bounds(12, 350, 200, 36) channel("Oscillator2Volume") range(0, 1, 0, 1, 0.01) text("Volume") textColour(255, 255, 255, 255) trackerColour(188, 151, 49, 255)
 hslider bounds(12, 386, 200, 36) range(-48, 48, 0, 1, 1) text("Semitone") channel("Oscillator2Semitone") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 hslider bounds(12, 420, 200, 36) range(-100, 100, 0, 1, 1) text("Cents") channel("Oscillator2Cents") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
-label bounds(30, 490, 160, 19) fontColour(255, 255, 255, 255) text("OSCILLATOR 3")
-label bounds(16, 510, 94, 18) fontColour(255, 255, 255, 255) text("Waveform")
-combobox bounds(116, 510, 87, 22) fontColour(188, 151, 49, 255) text("Sine", "Triangle", "Sawtooth", "Square", "Pulse") channel("WaveformSelection3")
-hslider bounds(16, 530, 200, 36) range(0, 1, 0, 1, 0.01) text("Volume") channel("Oscillator3Volume") textColour(255, 255, 255, 255) trackerColour(188, 151, 49, 255)
-hslider bounds(16, 566, 200, 36) range(-48, 48, 0, 1, 1) text("Semitone") channel("Oscillator3Semitone") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(16, 600, 200, 36) range(-100, 100, 0, 1, 1) text("Cents") channel ("Oscillator3Cents") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+label bounds(34, 480, 140, 20) fontColour(255, 255, 255, 255) text("OSCILLATOR 3")
+label bounds(12, 506, 82, 17) fontColour(255, 255, 255, 255) text("Waveform")
+combobox bounds(114, 504, 87, 22) fontColour(188, 151, 49, 255) text("Sine", "Triangle", "Sawtooth", "Square", "Pulse") channel("WaveformSelection3")
+hslider bounds(12, 528, 200, 36) range(0, 1, 0, 1, 0.01) text("Volume") channel("Oscillator3Volume") textColour(255, 255, 255, 255) trackerColour(188, 151, 49, 255)
+hslider bounds(12, 564, 200, 36) range(-48, 48, 0, 1, 1) text("Semitone") channel("Oscillator3Semitone") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(12, 598, 200, 36) range(-100, 100, 0, 1, 1) text("Cents") channel ("Oscillator3Cents") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 //GRAINS
 label bounds(358, 90, 99, 20) fontColour(255, 255, 255, 255) text("G R A I N S")
@@ -132,7 +130,7 @@ rslider bounds(872, 148, 80, 70) range(0, 1, 0, 1, 0.01) text("Amount") channel(
 //GLOBALS
 label bounds(1024, 20, 103, 20) fontColour(255, 255, 255, 255) text("GLOBAL")
 hslider bounds(976, 80, 200, 36) range(0, 1, 0.5, 1, 0.01) text("Stereo Pan") channel("GlobalPan") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(244, 224, 332, 36) range(0, 0.5, 0.5, 1, 0.01) text("Stereo Width") channel("GrainWidth") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(244, 224, 332, 36) range(0, 0.5, 0.5, 1, 0.01) text("Grain Width") channel("GrainWidth") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 hslider bounds(976, 44, 200, 36) range(0, 1, 1, 1, 0.01) text("Volume") channel("GlobalVolume") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255) fontColour(255, 255, 255, 255)
 
 label bounds(998, 168, 160, 20) fontColour(255, 255, 255, 255) text("AMP ENVELOPE")
@@ -148,12 +146,13 @@ hslider bounds(976, 116, 200, 36) range(-2400, 2400, 0, 1, 0.01) channel("Global
 </CsOptions>
 <CsInstruments>
 //TODO:
-//Refactor windowing envelopes
 //Filter not opening as much as v1.1 for same settings
+//Panning LFO? 3D panning?
+//Grain width lfo?
+//UI fine tuning
 
-//3D panning?
-//Stereo width lfo?
-//UI review?
+//BACKLOG:
+//Figure out how to make other windowing envelopes viable
 
 ksmps = 32
 nchnls = 2
@@ -161,14 +160,6 @@ nchnls = 2
 
 seed 0
 massign 0, "Trigger"
-
-//Windowing
-giWfn9 ftgen 1, 0, 16384, 20, 9 //Sync window
-giWfn2 ftgen 2, 0, 16384, 20, 2 //Hanning window
-giWfn5 ftgen 3, 0, 16384, 20, 5 //Blackman-Harris window
-giWfn5 ftgen 4, 0, 16384, 20, 6, 1, 2 //Gaussian window
-giWfn5 ftgen 5, 0, 16384, 20, 7, 1, 3.5 //Kaiser window
-giWfn8 ftgen 6, 0, 16384, 20, 8 //Rectangle window
 
 //Waveforms
 giSine ftgen 11, 0, 4096, 10, 1
@@ -374,27 +365,29 @@ instr Synthesis
     
     //Windowing
         iWfn chnget "WindowingSelection"
-        ;aWindowEnvSoft      transeg  0,0.015,0,         0.6,p3-0.03,0,      0.6,0.015,0,         0
-        aWindowEnvSoft      linseg   0, 0.015,          1, p3-0.03,         1, 0.015, 0
-        aWindowEnvMedium    transeg  0,0.01,0,          0.6,p3-0.02,0,      0.6,0.01,0,          0
-        aWindowEnvHard      transeg  0,0.005,0,         0.6,p3-0.01,0,      0.6,0.005,0,        0  
-        aWindowRectangle    transeg  0,0.0025,0,        0.6,p3-0.005,0,     0.6,0.0025,0,       0
-
-        if iWfn == 1 then
-            aWindowEnv = aWindowEnvSoft
-        elseif iWfn == 2 then
-            aWindowEnv = aWindowEnvMedium
-        elseif iWfn == 3 then
-            aWindowEnv = aWindowEnvHard
-        elseif iWfn == 4 then
-            aWindowEnv = aWindowRectangle
-        endif
+        iMaxAmplitude = 1.1 - p3
+        
+        aWindowEnvSoft      linseg  0, 0.005,   iMaxAmplitude, p3-0.05,     1, 0.045,   0
+        aWindowEnvMedium    linseg  0, 0.0025,   iMaxAmplitude, p3-0.0325,     1, 0.03,   0
+        ;aWindowEnvHard      linseg
+        ;aWindowRectangle    linseg
+          
+        aWindowEnv = aWindowEnvSoft
+;        if iWfn == 1 then
+;            aWindowEnv = aWindowEnvSoft
+;        elseif iWfn == 2 then
+;            aWindowEnv = aWindowEnvMedium
+;        elseif iWfn == 3 then
+;            aWindowEnv = aWindowEnvHard
+;        elseif iWfn == 4 then
+;            aWindowEnv = aWindowRectangle
+;        endif
         
     //Globals
         kGlobalPan  chnget "GlobalPan"
-        gkGlobalVol chnget "GlobalVolume"
+        kGlobalVol  chnget "GlobalVolume"
         kGlobalPan  port kGlobalPan, 0.02
-        gkGlobalVol port gkGlobalVol, 0.1
+        kGlobalVol  port kGlobalVol, 0.1
         
         kLfoAmpRange chnget "LfoAmpRange"
         kLfoAmpFreq chnget "LfoAmpFreq"    
@@ -437,7 +430,7 @@ instr Synthesis
         aGrain3 poscil aWindowEnv * kOsc3Vol, (p4 * kOsc3Semi * kOsc3Cent) + p8, iFn3, p5
         
         aAmpEnv interp p7
-        aGrainSum = (aGrain1 + aGrain2 + aGrain3) * aAmpEnv
+        aGrainSum = (aGrain1 + aGrain2 + aGrain3) * aAmpEnv * kGlobalVol * aAmpLfo
 
     //MODULATION
         //RM
@@ -454,7 +447,7 @@ instr Synthesis
         aAmpModSig ntrpol aGrainSum, aAMOsc * aGrainSum, kAMAmp * kModAmpLfo
 
         //MOD SUM
-        aGrainMod = (aRingModSig * aAmpModSig) * gkGlobalVol * aAmpLfo  
+        aGrainMod = aRingModSig * aAmpModSig
    
     //FILTERING:   
         kFilterEnvTotal ntrpol 100, 20000, p9
@@ -465,7 +458,7 @@ instr Synthesis
         else
             kFilterFreqTotal =  kFilterEnvTotal + p10 + gkFreqTotal ;kFreqTotal = cpsmidi + global cent tuning + frequency randomization
         endif
-        ;printk 0.1, p10
+        ;printk 0.1, p10 ;print filter lfo
         
         kFilterFreqTotal limit kFilterFreqTotal, 20, 20000
         ;printk 0.3, kFilterEnvTotal
@@ -539,7 +532,7 @@ instr Delay
         kDelayTimeLeft chnget "DelayTimeLeft"
         kDelayTimeRight chnget "DelayTimeRight"
         kDelayFeedback chnget "DelayFeedback"
-        gkDelayBypass chnget "DelayBypass"
+        kDelayBypass chnget "DelayBypass"
 
     //PORTK
         kDelayMix port kDelayMix, 0.02
@@ -557,7 +550,7 @@ instr Delay
         aTapR       deltapi kDelayTimeRight
                     delayw (aSigR * kDelaySend) + (aTapR * kDelayFeedback)
     
-        if gkDelayBypass == 0 then            
+        if kDelayBypass == 0 then            
             aDelayMixL ntrpol aSigL, aTapL, kDelayMix
             aDelayMixR ntrpol aSigR, aTapR, kDelayMix
             outs aDelayMixL, aDelayMixR
@@ -565,7 +558,7 @@ instr Delay
      endif
 
      //Outputs dry signal only if both effects are bypassed
-         if gkDelayBypass == 1 && gkReverbBypass == 1 then
+         if kDelayBypass == 1 && gkReverbBypass == 1 then
             outs aSigL, aSigR
          endif
  
