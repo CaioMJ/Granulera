@@ -239,7 +239,8 @@
         "label122": 0.0,
         "label125": 0.0,
         "label130": 0.0,
-        "label135": 0.0
+        "label135": 0.0,
+        "GrainSpread": 0.5
     },
     "Sine Organ": {
         "form2": 0.0,
@@ -341,7 +342,7 @@
         "label132": 0.0,
         "GlobalPan": 0.5,
         "GrainWidth": 0.5,
-        "GlobalVolume": 0.14999999105930328,
+        "GlobalVolume": 0.19999998807907104,
         "label137": 0.0,
         "AmpAttack": 0.009999999776482582,
         "AmpDecay": 0.09999997913837433,
@@ -373,6 +374,7 @@
         "label122": 0.0,
         "label125": 0.0,
         "label130": 0.0,
-        "label135": 0.0
+        "label135": 0.0,
+        "GrainSpread": 0.5
     }
 }

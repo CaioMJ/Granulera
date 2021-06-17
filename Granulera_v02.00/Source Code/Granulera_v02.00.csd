@@ -130,7 +130,7 @@ rslider bounds(872, 148, 80, 70) range(0, 1, 0, 1, 0.01) text("Amount") channel(
 //GLOBALS
 label bounds(1024, 20, 103, 20) fontColour(255, 255, 255, 255) text("GLOBAL")
 hslider bounds(976, 80, 200, 36) range(0, 1, 0.5, 1, 0.01) text("Stereo Pan") channel("GlobalPan") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(244, 224, 332, 36) range(0, 0.5, 0.5, 1, 0.01) text("Grain Width") channel("GrainWidth") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(244, 224, 332, 36) range(0, 0.5, 0.5, 1, 0.01) text("Grain Spread") channel("GrainSpread") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 hslider bounds(976, 44, 200, 36) range(0, 1, 1, 1, 0.01) text("Volume") channel("GlobalVolume") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255) fontColour(255, 255, 255, 255)
 
 label bounds(998, 168, 160, 20) fontColour(255, 255, 255, 255) text("AMP ENVELOPE")
@@ -146,7 +146,8 @@ hslider bounds(976, 116, 200, 36) range(-2400, 2400, 0, 1, 0.01) channel("Global
 </CsOptions>
 <CsInstruments>
 //TODO:
-//Filter not opening as much as v1.1 for same settings
+//Fix filter flo
+//Fix noise on sine wave
 //Panning LFO? 3D panning?
 //Grain width lfo?
 //UI fine tuning
@@ -248,7 +249,7 @@ instr Trigger
         gkFreqTotal = ((iFreqMIDI + kFreqVar) * kGlobalTuning)
     
     //Spatialization
-        kGrainWidth chnget "GrainWidth"
+        kGrainWidth chnget "GrainSpread"
         kRandomPan  random 0, kGrainWidth
     
     //Filter
@@ -293,14 +294,14 @@ instr Trigger
                 kFilterFreqSum = kFilterEnv
             endif
     
-            //Ports envelope
+            //Ports envelope         
             kFilterFreqSum port kFilterFreqSum, 0.1
             
             //Filter LFO
-            kLfoFilterFreq  chnget "LfoFilterFreq"
+            gkLfoFilterFreq  chnget "LfoFilterFreq"
             kLfoFilterRange chnget "LfoFilterRange"
 
-            kLfoFilter lfo kLfoFilterRange, kLfoFilterFreq
+            kLfoFilter lfo kLfoFilterRange, gkLfoFilterFreq
             kLfoFilter += 0.5
 
     //Amp envelope
@@ -311,6 +312,22 @@ instr Trigger
 
         kAmpEnv     madsr iAttack, iDecay, iSustain, iRelease
         kAmpEnv     port kAmpEnv, 0.05
+        
+        kLfoAmpRange chnget "LfoAmpRange"
+        kLfoAmpFreq chnget "LfoAmpFreq"    
+        kAmpLfo lfo kLfoAmpRange, kLfoAmpFreq
+        kAmpLfo += 0.5
+        
+    //Modulation LFO
+        kLfoModAmpRange chnget "LfoModAmpRange"
+        kLfoModAmpFreq chnget "LfoModAmpFreq"
+    
+        kLfoModFreqRange chnget "LfoModFreqRange"
+        kLfoModFreqFreq chnget "LfoModFreqFreq"
+        
+        kModAmpLfo lfo kLfoModAmpRange, kLfoModAmpFreq
+        kModAmpLfo += 0.5
+        kModFreqLfo lfo kLfoModFreqRange, kLfoModFreqFreq
                 
      //PANIC
         kPanic chnget "Panic"
@@ -319,8 +336,8 @@ instr Trigger
      endif
 
     //Granulation 
-        schedkwhen kTrig, 0, 0, "Synthesis", 0, kDurTotal, gkFreqTotal + kPitchVar, abs(kPhaseVar), kRandomPan, kAmpEnv, kLfoTuning, kFilterFreqSum, kLfoFilter
-        ;                                          p3            p4                      p5              p6          p7          p8          p9          p10
+        schedkwhen kTrig, 0, 0, "Synthesis", 0, kDurTotal, gkFreqTotal + kPitchVar, abs(kPhaseVar), kRandomPan, kAmpEnv, kLfoTuning, kFilterFreqSum, kLfoFilter, kAmpLfo, kModAmpLfo, kModFreqLfo 
+        ;                                          p3            p4                      p5              p6          p7          p8          p9          p10        p11        p12      p13
 endin
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 instr Synthesis
@@ -367,8 +384,8 @@ instr Synthesis
         iWfn chnget "WindowingSelection"
         iMaxAmplitude = 1.1 - p3
         
-        aWindowEnvSoft      linseg  0, 0.005,   iMaxAmplitude, p3-0.05,     1, 0.045,   0
-        aWindowEnvMedium    linseg  0, 0.0025,   iMaxAmplitude, p3-0.0325,     1, 0.03,   0
+        aWindowEnvSoft      linseg  0, 0.005,   iMaxAmplitude, p3-0.05,     iMaxAmplitude, 0.05,   0
+        ;aWindowEnvMedium    linseg  
         ;aWindowEnvHard      linseg
         ;aWindowRectangle    linseg
           
@@ -389,14 +406,7 @@ instr Synthesis
         kGlobalPan  port kGlobalPan, 0.02
         kGlobalVol  port kGlobalVol, 0.1
         
-        kLfoAmpRange chnget "LfoAmpRange"
-        kLfoAmpFreq chnget "LfoAmpFreq"    
-        aAmpLfo lfo kLfoAmpRange, kLfoAmpFreq
-        aAmpLfo += 0.5
 
-        kAmpLfo lfo kLfoAmpRange, kLfoAmpFreq
-        kAmpLfo += 0.5
-        
         kLfoPanRange chnget "LfoPanRange"
         kLfoPanFreq chnget "LfoPanFreq" 
         kPanLfo lfo kLfoPanRange, kLfoPanFreq
@@ -409,20 +419,11 @@ instr Synthesis
         kAMAmp chnget "AMAmp"
         kFMFreq chnget "FMFreq"
         kFMAmp chnget "FMAmp"
-        kModRouting chnget "ModRouting"
         kRMFreq port kRMFreq, 0.02
         kRMAmp port kRMAmp, 0.02
         kAMFreq port kAMFreq, 0.02
         kAMAmp port kAMAmp, 0.02
-        kLfoModAmpRange chnget "LfoModAmpRange"
-        kLfoModAmpFreq chnget "LfoModAmpFreq"
-    
-        kLfoModFreqRange chnget "LfoModFreqRange"
-        kLfoModFreqFreq chnget "LfoModFreqFreq"
-        
-        kModAmpLfo lfo kLfoModAmpRange, kLfoModAmpFreq
-        kModAmpLfo += 0.5
-        kModFreqLfo lfo kLfoModFreqRange, kLfoModFreqFreq
+
 
     //Oscilattors
         aGrain1 poscil aWindowEnv * kOsc1Vol, (p4 * kOsc1Semi * kOsc1Cent) + p8, iFn1, p5
@@ -430,40 +431,44 @@ instr Synthesis
         aGrain3 poscil aWindowEnv * kOsc3Vol, (p4 * kOsc3Semi * kOsc3Cent) + p8, iFn3, p5
         
         aAmpEnv interp p7
+        aAmpLfo interp p11
         aGrainSum = (aGrain1 + aGrain2 + aGrain3) * aAmpEnv * kGlobalVol * aAmpLfo
 
     //MODULATION
         //RM
         kRMFreq = cent(kRMFreq)
-        aRMOsc poscil 1, (kRMFreq * gkFreqTotal) + kModFreqLfo
+        aRMOsc poscil 1, (kRMFreq * gkFreqTotal) + p13
     
-        aRingModSig ntrpol aGrainSum, aRMOsc * aGrainSum, kRMAmp * kModAmpLfo
+        aRingModSig ntrpol aGrainSum, aRMOsc * aGrainSum, kRMAmp * p12
     
         //AM
         kAMFreq = cent(kAMFreq)
-        aAMOsc poscil 0.5, (kAMFreq * gkFreqTotal) + kModFreqLfo
+        aAMOsc poscil 0.5, (kAMFreq * gkFreqTotal) + p13
         aAMOsc += 0.5
      
-        aAmpModSig ntrpol aGrainSum, aAMOsc * aGrainSum, kAMAmp * kModAmpLfo
+        aAmpModSig ntrpol aGrainSum, aAMOsc * aGrainSum, kAMAmp * p12
 
         //MOD SUM
         aGrainMod = aRingModSig * aAmpModSig
    
     //FILTERING:   
-        kFilterEnvTotal ntrpol 100, 20000, p9
+        kFilterEnvTotal ntrpol 20, 20000, p9
 
         //Frequency offset        
         if gkFilterNoteTracking == 0 then
-            kFilterFreqTotal =  kFilterEnvTotal + p10
+            kFilterFreqTotal =  kFilterEnvTotal
+            if gkLfoFilterFreq > 0 then
+                kFilterFreqTotal *= p10
+            endif
         else
-            kFilterFreqTotal =  kFilterEnvTotal + p10 + gkFreqTotal ;kFreqTotal = cpsmidi + global cent tuning + frequency randomization
+            kFilterFreqTotal =  kFilterEnvTotal + gkFreqTotal ;kFreqTotal = cpsmidi + global cent tuning + frequency randomization
+            if gkLfoFilterFreq > 0 then
+                kFilterFreqTotal *= p10
+            endif
         endif
-        ;printk 0.1, p10 ;print filter lfo
         
         kFilterFreqTotal limit kFilterFreqTotal, 20, 20000
-        ;printk 0.3, kFilterEnvTotal
-        
-        
+              
         //Filter type selection
         if giFilterType == 2 then
             aSigFilter butterbp aGrainMod, kFilterFreqTotal, gkFilterBW
@@ -471,7 +476,6 @@ instr Synthesis
             gkFilterReson limit gkFilterReson, 1, 50
             aSigFilter bqrez aGrainMod, kFilterFreqTotal, gkFilterReson, giFilterType  
         endif
-        ;printk 0.3, kFilterFreqTotal
 
     //Random Pan Position
         iRandomLow linearRandom_Low -p6, 0, 50
