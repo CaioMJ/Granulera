@@ -13,9 +13,9 @@ filebutton bounds(98, 4, 64, 33) text("Save", "Save") mode("named preset") chann
 filebutton bounds(162, 4, 64, 33) text("Delete", "Delete") mode("remove preset") channel("filebutton12")
 
 button bounds(12, 664, 80, 40) text("PANIC", "PANIC") channel("Panic") colour:1(255, 0, 0, 255) 
+button bounds(126, 664, 80, 40) channel("VelocityButton") text("Velocity Disabled", "Velocity Enabled") colour:1(200, 183, 22, 255)
 
 //OSCILLATORS
-
 label bounds(34, 114, 140, 20) text("OSCILLATOR 1") fontColour(255, 255, 255, 255)
 label bounds(12, 140, 82, 17) text("Waveform") fontColour(255, 255, 255, 255)
 combobox bounds(114, 138, 87, 22) text("Sine", "Triangle", "Sawtooth", "Square", "Pulse") fontColour(188, 151, 49, 255) channel("WaveformSelection1")
@@ -56,13 +56,10 @@ rslider bounds(370, 360, 80, 70) range(0.01, 10, 0.01, 1, 0.1) channel("DensityV
 //Phase
 rslider bounds(496, 148, 80, 70) range(0, 1, 1, 1, 0.05) text("Phase Variation") channel("PhaseVariation") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
-//LFOs
-label bounds(744, 234, 70, 20) fontColour(255, 255, 255, 255) text("L F O")
-
-//FILTERS
+//FILTER
 label bounds(366, 450, 99, 22) fontColour(255, 255, 255, 255) text("F I L T E R")
 label bounds(376, 490, 89, 15) fontColour(255, 255, 255, 255) text("Filter Type")
-checkbox bounds(252, 484, 120, 26)  channel("FilterNoteTrack") text("Key Tracking")  fontColour:0(255, 255, 255, 255) fontColour:1(255, 255, 255, 255) colour:1(188, 151, 49, 255) shape("circle") colour:0(128, 128, 128, 255) value(1)
+checkbox bounds(252, 482, 120, 26)  channel("FilterNoteTrack") text("Key Tracking")  fontColour:0(255, 255, 255, 255) fontColour:1(255, 255, 255, 255) colour:1(188, 151, 49, 255) shape("circle") colour:0(128, 128, 128, 255) value(1)
 combobox bounds(472, 488, 87, 20) text("Low Pass", "High Pass", "Band Pass") fontColour(188, 151, 49, 255) channel("FilterSelection") value(1)
 rslider bounds(294, 516, 80, 70) range(0.001, 1, 1, 0.5, 0.001) text("Frequency") channel("FilterFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 rslider bounds(378, 516, 80, 70) range(0.001, 1, 0.001, 0.5, 0.001) text("Start/End Freq") channel("FilterRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
@@ -92,6 +89,7 @@ hslider bounds(976, 634, 200, 36) range(0.05, 10, 0, 0.4, 0.01) channel("DelayTi
 hslider bounds(976, 668, 200, 36) range(0, 1, 0, 1, 0.01) channel("DelayFeedback") text("Feedback") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 //LFO
+label bounds(744, 234, 70, 20) fontColour(255, 255, 255, 255) text("L F O")
 label bounds(630, 380, 131, 15) fontColour(255, 255, 255, 255) text("Filter Frequency")
 rslider bounds(694, 404, 80, 70) range(0, 0.5, 0, 1, 0.01) text("Amount") channel("LfoFilterRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 rslider bounds(614, 404, 80, 70) range(0, 15, 0, 0.5, 0.01) text("Frequency") channel("LfoFilterFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
@@ -130,23 +128,23 @@ rslider bounds(872, 148, 80, 70) range(0, 1, 0, 1, 0.01) text("Amount") channel(
 label bounds(1024, 20, 103, 20) fontColour(255, 255, 255, 255) text("GLOBAL")
 hslider bounds(976, 78, 200, 36) range(0, 1, 0.5, 1, 0.01) text("Stereo Pan") channel("GlobalPan") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 hslider bounds(244, 222, 332, 36) range(0, 0.5, 0.5, 1, 0.01) text("Grain Spread") channel("GrainSpread") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(976, 44, 200, 36) range(0, 1, 1, 1, 0.01) text("Volume") channel("GlobalVolume") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255) fontColour(255, 255, 255, 255)
+hslider bounds(976, 42, 200, 36) range(0, 2, 1, 1, 0.01) text("Volume") channel("GlobalVolume") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255) fontColour(255, 255, 255, 255)
 
 label bounds(1008, 166, 142, 20) fontColour(255, 255, 255, 255) text("AMP ENVELOPE")
 hslider bounds(976, 190, 200, 36) range(0.01, 10, 0.1, 0.5, 0.01) text("Attack") channel("AmpAttack") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 hslider bounds(976, 224, 200, 36) range(0.01, 10, 0.1, 0.5, 0.01) text("Decay") channel("AmpDecay") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(976, 258, 200, 36) range(0.0001, 1, 1, 1, 0.01) text("Sustain") channel("AmpSustain") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(976, 256, 200, 36) range(0.0001, 1, 1, 1, 0.01) text("Sustain") channel("AmpSustain") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 hslider bounds(976, 292, 200, 36) range(0.01, 10, 0.4, 1, 0.01) text("Release") channel("AmpRelease") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 hslider bounds(976, 112, 200, 36) range(-2400, 2400, 0, 1, 0.01) channel("GlobalTuning") text("Tuning") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
-//LINES
+//GRAPHIC LINES
 //Vertical
-image bounds(232, 0, 2, 724) channel("image10000") colour(188, 151, 49, 255)
-image bounds(600, 75, 2, 649) channel("image10000") colour(188, 151, 49, 255)
+image bounds(237, 0, 2, 724) channel("image10000") colour(188, 151, 49, 255)
+image bounds(600, 77, 2, 647) channel("image10000") colour(188, 151, 49, 255)
 image bounds(960, 0, 2, 724) channel("image10000") colour(188, 151, 49, 255)
 //Horizontal
-image bounds(232, 75, 728, 2) channel("image10000") colour(188, 151, 49, 255)
-image bounds(232, 440, 368, 2) channel("image10000") colour(188, 151, 49, 255)
+image bounds(237, 77, 725, 2) channel("image10000") colour(188, 151, 49, 255)
+image bounds(237, 440, 363, 2) channel("image10000") colour(188, 151, 49, 255)
 image bounds(600, 225, 360, 2) channel("image10000") colour(188, 151, 49, 255)
 ;image bounds(960, 335, 240, 2) channel("image10000") colour(188, 151, 49, 255)
 
@@ -158,9 +156,11 @@ image bounds(600, 225, 360, 2) channel("image10000") colour(188, 151, 49, 255)
 </CsOptions>
 <CsInstruments>
 //TODO:
-//Fix noise on sine wave
-//Swap Amp Modulation for something else?
+//Fix noise 
 //UI review and fine tuning
+
+//BACKLOG:
+//Swap Amp Modulation for something else
 
 ksmps = 32
 nchnls = 2
@@ -230,14 +230,15 @@ instr Trigger
         kDensityVar     jitter  kDensityVarRange, .2 * kDensityVarRate, 1 * kDensityVarRate
         kDensityTotal   limit   kDensity + kDensityVar + kLfoDensity, 0.5, 80
         
-        kTrig metro kDensityTotal
+        ;kTrig metro kDensityTotal
+        kTrig metro 1
     
     //Phase Variation
         kPhaseVar chnget "PhaseVariation"
         kPhaseVar rand kPhaseVar
 
     //Pitch
-        iFreqMIDI cpsmidi
+        iFreqMIDI       cpsmidi
         kPitchVar       chnget "PitchVariation"
         
         kFreqVarRange   chnget "FrequencyVariationRange"
@@ -247,17 +248,17 @@ instr Trigger
         kLfoTuningRange chnget "LfoTuningRange"
         kLfoTuningFreq  chnget "LfoTuningFreq"
         
-        kLfoTuning lfo kLfoTuningRange, kLfoTuningFreq       
+        kLfoTuning      lfo kLfoTuningRange, kLfoTuningFreq       
                 
-        kPitchVar rand kPitchVar
+        kPitchVar       rand kPitchVar
         kGlobalTuning = cent(kGlobalTuning)
     
         kFreqVar jitter kFreqVarRange, .2 * kFreqVarRate, 1 * kFreqVarRate
         gkFreqTotal = ((iFreqMIDI + kFreqVar) * kGlobalTuning)
     
     //Spatialization
-        kGrainWidth chnget "GrainSpread"
-        kRandomPan  random 0, kGrainWidth
+        kGrainSpread chnget "GrainSpread"
+        kRandomSpread  random 0, kGrainSpread
     
     //Filter
         iFilterFreq     chnget "FilterFreq"
@@ -311,6 +312,10 @@ instr Trigger
             kLfoFilter lfo kLfoFilterRange, gkLfoFilterFreq
             kLfoFilter += 0.5
 
+    //Velocity
+        iVelocityToggle chnget "VelocityButton"
+        iAmpMIDI        ampmidi 1
+     
     //Amp envelope
         iAttack     chnget "AmpAttack"
         iDecay      chnget "AmpDecay"
@@ -319,6 +324,11 @@ instr Trigger
 
         kAmpEnv     madsr iAttack, iDecay, iSustain, iRelease
         kAmpEnv     port kAmpEnv, 0.05
+        
+        if iVelocityToggle == 1 then
+            kAmpEnv *= iAmpMIDI
+        endif
+        
         
         kLfoAmpRange chnget "LfoAmpRange"
         kLfoAmpFreq chnget "LfoAmpFreq"    
@@ -340,16 +350,17 @@ instr Trigger
         kLfoPanRange chnget "LfoPanRange"
         gkLfoPanFreq chnget "LfoPanFreq" 
         kPanLfo lfo kLfoPanRange, gkLfoPanFreq
-        ;kPanLfo += .5
                 
      //PANIC
         kPanic chnget "Panic"
      if kPanic == 1 then  
         turnoff 
      endif
+     
+
 
     //Granulation 
-        schedkwhen kTrig, 0, 0, "Synthesis", 0, kDurTotal, gkFreqTotal + kPitchVar, abs(kPhaseVar), kRandomPan, kAmpEnv, kLfoTuning, kFilterFreqSum, kLfoFilter, kAmpLfo, kModAmpLfo, kModFreqLfo, kPanLfo 
+        schedkwhen kTrig, 0, 0, "Synthesis", 0, .5, 400 , 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 
         ;                                          p3            p4                      p5              p6          p7          p8          p9          p10        p11        p12      p13         p14
 endin
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -394,14 +405,18 @@ instr Synthesis
         kOsc3Cent = semitone(kOsc3Cent)
     
     //Windowing
-        iMaxAmplitude = 1.1 - p3    
-        aWindowEnvSoft  linseg  0, 0.005,   iMaxAmplitude, p3-0.05,     iMaxAmplitude, 0.045,   0        
-
+        ;iMaxAmplitude = 1.1 - p3    
+        ;aWindowEnv  linseg  0, 0.01,   iMaxAmplitude, p3-0.05,     iMaxAmplitude, 0.030,   0
+      
+        kWindowIndex line 0, p3, 1
+        kWindowEnv table kWindowIndex, 56, 1 
+        aWindowEnv interp kWindowEnv
+      
     //Globals
         kGlobalPan  chnget "GlobalPan"
         kGlobalVol  chnget "GlobalVolume"
         kGlobalPan  port kGlobalPan, 0.02
-        kGlobalVol  port kGlobalVol, 0.1
+        kGlobalVol  port kGlobalVol, 0.02
         
     //Modulation
         kRMFreq chnget "RMFreq"
@@ -415,81 +430,31 @@ instr Synthesis
         kAMFreq port kAMFreq, 0.02
         kAMAmp port kAMAmp, 0.02
 
-
-    //Oscilattors
-        aGrain1 poscil aWindowEnvSoft * kOsc1Vol, (p4 * kOsc1Semi * kOsc1Cent) + p8, iFn1, p5
-        aGrain2 poscil aWindowEnvSoft * kOsc2Vol, (p4 * kOsc2Semi * kOsc2Cent) + p8, iFn2, p5
-        aGrain3 poscil aWindowEnvSoft * kOsc3Vol, (p4 * kOsc3Semi * kOsc3Cent) + p8, iFn3, p5
+    //Osciillators
+        aGrain1 poscil aWindowEnv * kOsc1Vol, p4, iFn1, p5
+        
         
         aAmpEnv interp p7
         aAmpLfo interp p11
-        aGrainSum = (aGrain1 + aGrain2 + aGrain3) * aAmpEnv * kGlobalVol * aAmpLfo * 2
-
-    //MODULATION
-        //RM
-        kRMFreq = cent(kRMFreq)
-        aRMOsc poscil 1, (kRMFreq * gkFreqTotal) + p13
-    
-        aRingModSig ntrpol aGrainSum, aRMOsc * aGrainSum, kRMAmp * p12
-    
-        //AM
-        kAMFreq = cent(kAMFreq)
-        aAMOsc poscil 0.5, (kAMFreq * gkFreqTotal) + p13
-        aAMOsc += 0.5
-     
-        aAmpModSig ntrpol aGrainSum, aAMOsc * aGrainSum, kAMAmp * p12
-
-        //MOD SUM
-        aGrainMod = aRingModSig * aAmpModSig
-   
-    //FILTERING:   
-        kFilterEnvTotal ntrpol 20, 20000, p9
-
-        //Frequency offset        
-        if gkFilterNoteTracking == 0 then
-            kFilterFreqTotal =  kFilterEnvTotal
-            if gkLfoFilterFreq > 0 then
-                kFilterFreqTotal *= p10
-            endif
-        else
-            kFilterFreqTotal =  kFilterEnvTotal + gkFreqTotal ;kFreqTotal = cpsmidi + global cent tuning + frequency randomization
-            if gkLfoFilterFreq > 0 then
-                kFilterFreqTotal *= p10
-            endif
-        endif
         
-        kFilterFreqTotal limit kFilterFreqTotal, 20, 20000
-              
-        //Filter type selection
-        if giFilterType == 2 then
-            aSigFilter butterbp aGrainMod, kFilterFreqTotal, gkFilterBW
-        else
-            gkFilterReson limit gkFilterReson, 1, 50
-            aSigFilter bqrez aGrainMod, kFilterFreqTotal, gkFilterReson, giFilterType  
-        endif
+        aGrainSum = aGrain1 * aAmpEnv * kGlobalVol * aAmpLfo *.5
 
+
+    
     //Random Pan Position
-        iRandomLow linearRandom_Low -p6, 0, 50
-        iRandomHigh linearRandom_High 0, p6, 50
-        iRandomArray[] fillarray iRandomLow, iRandomHigh
-        
-        iRandomIndexSelector random 0, 1
-        iRandomIndex = iRandomIndexSelector < 0.5 ? 0 : 1
-        aGrainOutL, aGrainOutR pan2 aSigFilter, .5 + iRandomArray[iRandomIndex]
+
         
     //Global pan
-        if gkLfoPanFreq > 0 then
-            kPan = kGlobalPan + p14
-        else
-            kPan = kGlobalPan
-        endif
-        
-        aGrainOutL *= 1 - kPan
-        aGrainOutR *= kPan
+
         
     //Output
-        chnmix aGrainOutL, "SigL"
-        chnmix aGrainOutR, "SigR" 
+    aGrainOutL = aGrainSum 
+    aGrainOutR = aGrainSum 
+        
+    outs aGrainOutL, aGrainOutR
+    ;chnmix aGrainOutL, "SigL"
+    ;chnmix aGrainOutR, "SigR"  
+
 endin
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 instr Reverb
@@ -585,9 +550,10 @@ endin
 </CsInstruments>
 <CsScore>
 f0 z
+f 56 0 1024 20 2 ;Hanning window
 i "UI_Swap" 0 999999999
-i "Delay" 0 999999999
-i "Reverb" 0 99999999
+i "Delay"   0 999999999
+i "Reverb"  0 999999999
 </CsScore>
 </CsoundSynthesizer>
 <bsbPanel>
