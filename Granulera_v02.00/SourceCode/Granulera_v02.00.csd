@@ -8,11 +8,13 @@ combobox bounds(400, 12, 400, 32) channelType("string") populate("*.snaps") font
 filebutton bounds(328, 12, 64, 32) text("Save", "Save") mode("named preset") channel("filebutton11")
 filebutton bounds(806, 12, 64, 32) text("Delete", "Delete") mode("remove preset") channel("filebutton12")
 
-button bounds(10, 600, 55, 32) text("PANIC", "PANIC") channel("Panic") colour:1(255, 0, 0, 255) 
-button bounds(88, 598, 124, 32) channel("VelocityButton") text("Velocity Disabled", "Velocity Enabled") colour:1(188, 151, 49, 255)
+label bounds(12, 594, 113, 14) channel("label10114") text("Pitch Bend Range") fontColour(255, 255, 255, 255)
+nslider bounds(156, 588, 59, 26) channel("PitchBend") range(1, 24, 2, 1, 1) colour(0, 0, 0, 255) textColour(255, 255, 255, 255) trackerColour(0, 0, 0, 0) 
+button bounds(160, 625, 55, 32) text("PANIC", "PANIC") channel("Panic") colour:1(255, 0, 0, 255) 
+button bounds(6, 624, 123, 32) channel("VelocityButton") text("Velocity Disabled", "Velocity Enabled") colour:1(188, 151, 49, 255)
 
 //OSCILLATORS
-image bounds(0, 100, 237, 500) channel("image10115") colour(0, 0, 0, 255)
+image bounds(0, 100, 237, 465) channel("image10115") colour(0, 0, 0, 255)
 {
 label bounds(34, 0, 140, 18) text("OSCILLATOR 1") fontColour(255, 255, 255, 255) channel("label18")
 label bounds(25, 30, 82, 14) text("Waveform") fontColour(255, 255, 255, 255) channel("label20")
@@ -21,19 +23,19 @@ hslider bounds(12, 48, 180, 29) range(0, 1, 1, 1, 0.01) text("Volume") channel("
 hslider bounds(12, 78, 180, 29) range(-24, 24, 0, 1, 1) text("Semitone") channel("Oscillator1Semitone") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 hslider bounds(12, 108, 180, 29) range(-100, 100, 0, 1, 1) text("Cents") channel("Oscillator1Cents") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
-label bounds(34, 165, 140, 18) text("OSCILLATOR 2") channel("label29") fontColour(255, 255, 255,255)
-label bounds(25, 195, 82, 14) fontColour(255, 255, 255, 255) text("Waveform")
+label bounds(34, 165, 140, 18) text("OSCILLATOR 2") channel("label29") fontColour(255, 255, 255, 255)
+label bounds(25, 195, 82, 14) fontColour(255, 255, 255, 255) text("Waveform") channel("label24")
 combobox bounds(114, 193, 80, 20) channel("WaveformSelection2") fontColour(188, 151, 49, 255) text("Sine", "Triangle", "Sawtooth", "Square", "Pulse")
 hslider bounds(12, 213, 180, 29) channel("Oscillator2Volume") range(0, 1, 0, 1, 0.01) text("Volume") textColour(255, 255, 255, 255) trackerColour(188, 151, 49, 255)
 hslider bounds(12, 243, 180, 29) range(-24, 24, 0, 1, 1) text("Semitone") channel("Oscillator2Semitone") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 hslider bounds(12, 273, 180, 29) range(-100, 100, 0, 1, 1) text("Cents") channel("Oscillator2Cents") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
-label bounds(34, 330, 140, 18) fontColour(255, 255, 255, 255) text("OSCILLATOR 3")
-label bounds(25, 360, 82, 14) fontColour(255, 255, 255, 255) text("Waveform")
+label bounds(34, 330, 140, 18) fontColour(255, 255, 255, 255) text("OSCILLATOR 3") channel("label30")
+label bounds(25, 360, 82, 14) fontColour(255, 255, 255, 255) text("Waveform") channel("label31")
 combobox bounds(114, 358, 80, 20) fontColour(188, 151, 49, 255) text("Sine", "Triangle", "Sawtooth", "Square", "Pulse") channel("WaveformSelection3")
 hslider bounds(12, 378, 180, 29) range(0, 1, 0, 1, 0.01) text("Volume") channel("Oscillator3Volume") textColour(255, 255, 255, 255) trackerColour(188, 151, 49, 255)
 hslider bounds(12, 408, 180, 29) range(-24, 24, 0, 1, 1) text("Semitone") channel("Oscillator3Semitone") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(12, 438, 180, 29) range(-100, 100, 0, 1, 1) text("Cents") channel ("Oscillator3Cents") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(12, 438, 180, 29) range(-100, 100, 0, 1, 1) text("Cents") channel("Oscillator3Cents") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 }
 
 //GRAINS
@@ -118,21 +120,21 @@ rslider bounds(872, 494, 80, 56) range(0, 1200, 0, 0.35, 0.01) text("Amount") ch
 rslider bounds(792, 494, 80, 56) range(0, 15, 0, 0.5, 0.01) text("Frequency") channel("LfoTuningFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 label bounds(620, 570, 151, 14) fontColour(255, 255, 255, 255) text("Modulation Tuning")
-rslider bounds(694, 594, 80, 56) range(0, 3600, 0, 0.5, 1) text("Amount") channel("LfoModFreqRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-rslider bounds(614, 594, 80, 56) range(0, 15, 0, 1, 0.01) text("Frequency") channel("LfoModFreqFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(694, 594, 80, 56) range(0, 5000, 0, 0.5, 1) text("Amount") channel("LfoModFreqRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(614, 592, 80, 56) range(0, 15, 0, 1, 0.01) text("Frequency") channel("LfoModFreqFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 label bounds(804, 570, 140, 14) fontColour(255, 255, 255, 255) text("Modulation Amount")
-rslider bounds(872, 594, 80, 56) range(0, 0.5, 0, 1, 0.01) text("Amount") channel("LfoModAmpRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-rslider bounds(792, 594, 80, 56) range(0, 15, 0, 0.5, 0.01) text("Frequency") channel("LfoModAmpFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(872, 594, 80, 56) range(0, 1, 0, 1, 0.01) text("Amount") channel("LfoModAmpRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(792, 592, 80, 56) range(0, 15, 0, 1, 0.01) text("Frequency") channel("LfoModAmpFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 //MODULATION
 label bounds(696, 75, 203, 18) fontColour(255, 255, 255, 255) text("M O D U L A T I O N")
 label bounds(654, 109, 83, 15) fontColour(255, 255, 255, 255) text("Ring")
 rslider bounds(614, 133, 80, 56) range(-3600, 3600, 0, 1, 1) text("Tuning") channel("RMFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 rslider bounds(694, 133, 80, 56) range(0, 1, 0, 1, 0.01) text("Amount") channel("RMAmp") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-label bounds(832, 109, 83, 15) fontColour(255, 255, 255, 255) text("Amplitude")
-rslider bounds(792, 133, 80, 56) range(-3600, 3600, 0, 1, 1) text("Tuning") channel("AMFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-rslider bounds(872, 133, 80, 56) range(0, 1, 0, 1, 0.01) text("Amount") channel("AMAmp") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+label bounds(832, 108, 83, 15) fontColour(255, 255, 255, 255) text("Frequency") channel("label132")
+rslider bounds(792, 132, 80, 56) range(0, 10000, 0, 0.5, 1) text("Tuning") channel("FMFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(872, 132, 80, 56) range(0, 10000, 0, 0.5, 0.01) text("Amount") channel("FMAmp") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 //GLOBALS
 label bounds(1024, 20, 103, 18) fontColour(255, 255, 255, 255) text("GLOBAL")
@@ -156,12 +158,15 @@ image bounds(237, 55, 725, 2) channel("image10000") colour(188, 151, 49, 255)
 image bounds(237, 410, 363, 2) channel("image10000") colour(188, 151, 49, 255)
 image bounds(600, 210, 360, 2) channel("image10000") colour(188, 151, 49, 255)
 
+
 </Cabbage>
 <CsoundSynthesizer>
 <CsOptions>
 -n -+rtmidi=NULL -M0 -dm0
 </CsOptions>
 <CsInstruments>
+//TODO
+//Double check LFO behaviour
 
 ksmps = 32
 nchnls = 2
@@ -246,6 +251,10 @@ instr Trigger
         kPhaseVar rand kPhaseVar
 
     //Pitch
+        iPitchBendValue chnget "PitchBend"
+        iPitchBendValueOffset = 2    
+        kPitchBend pchbend (-iPitchBendValue + iPitchBendValueOffset)/2, (iPitchBendValue + iPitchBendValueOffset) / 2
+                
         iFreqMIDI       cpsmidi
         kPitchVar       chnget "PitchVariation"
         
@@ -349,7 +358,7 @@ instr Trigger
         kLfoModFreqFreq chnget "LfoModFreqFreq"
         
         kModAmpLfo lfo kLfoModAmpRange, kLfoModAmpFreq
-        kModAmpLfo += 0.5
+        ;kModAmpLfo += 0.5
         kModFreqLfo lfo kLfoModFreqRange, kLfoModFreqFreq
         
     ///Pan LFO
@@ -364,18 +373,20 @@ instr Trigger
      endif
      
     //Granulation 
-        schedkwhen kTrig, 0, 0, "Synthesis", 0, kDurTotal, gkFreqTotal + kPitchVar, abs(kPhaseVar), kRandomSpread, kAmpEnv, kLfoTuning, kFilterFreqSum, kLfoFilter, kAmpLfo, kModAmpLfo, kModFreqLfo, kPanLfo 
-        ;                                          p3            p4                      p5              p6          p7          p8          p9          p10        p11        p12      p13         p14
+        schedkwhen kTrig, 0, 0, "Synthesis", 0, kDurTotal, gkFreqTotal + kPitchVar, abs(kPhaseVar), kRandomSpread, kAmpEnv, kLfoTuning, kFilterFreqSum, kLfoFilter, kAmpLfo, kModAmpLfo, kModFreqLfo, kPanLfo, kPitchBend 
+        ;                                          p3            p4                      p5              p6          p7          p8          p9          p10        p11        p12          p13         p14     p15
 endin
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 instr Synthesis
+        ;iPitchBend = cent(p15)
+
     //Oscillator1
         iOsc1Vol    chnget "Oscillator1Volume"
         iOsc1Semi   chnget "Oscillator1Semitone"
         iOsc1Cent   chnget "Oscillator1Cents"
         iFn1        chnget "WaveformSelection1"
     
-        iOsc1Semi = semitone(iOsc1Semi)
+        iOsc1Semi = semitone(iOsc1Semi + p15)
         iOsc1Cent = cent(iOsc1Cent)
     
     //Oscillator2
@@ -384,7 +395,7 @@ instr Synthesis
         iOsc2Cent   chnget "Oscillator2Cents"  
         iFn2        chnget "WaveformSelection2"
    
-        iOsc2Semi = semitone(iOsc2Semi)
+        iOsc2Semi = semitone(iOsc2Semi + p15)
         iOsc2Cent = cent(iOsc2Cent)
     
     //Oscillator3
@@ -393,7 +404,7 @@ instr Synthesis
         iOsc3Cent   chnget "Oscillator3Cents"
         iFn3        chnget "WaveformSelection3"
    
-        iOsc3Semi = semitone(iOsc3Semi)
+        iOsc3Semi = semitone(iOsc3Semi + p15)
         iOsc3Cent = cent(iOsc3Cent)
     
     //Windowing      
@@ -411,41 +422,30 @@ instr Synthesis
     //Modulation
         iRMFreq chnget "RMFreq"
         iRMAmp chnget "RMAmp"
-        iAMFreq chnget "AMFreq"
-        iAMAmp chnget "AMAmp"
         iFMFreq chnget "FMFreq"
         iFMAmp chnget "FMAmp"
-;        kRMFreq port kRMFreq, 0.02
-;        kRMAmp port kRMAmp, 0.02
-;        kAMFreq port kAMFreq, 0.02
-;        kAMAmp port kAMAmp, 0.02
+        
+    //FREQUENCY MODULATION
+        iModAmpLfo = p12
+        aFMOsc poscil iFMAmp + iModAmpLfo, iFMFreq + abs(p13 * 2)
 
-    //Oscilattors
-        aGrain1 poscil aWindowEnv * iOsc1Vol, (p4 * iOsc1Semi * iOsc1Cent) + p8, iFn1, p5
-        aGrain2 poscil aWindowEnv * iOsc2Vol, (p4 * iOsc2Semi * iOsc2Cent) + p8, iFn2, p5
-        aGrain3 poscil aWindowEnv * iOsc3Vol, (p4 * iOsc3Semi * iOsc3Cent) + p8, iFn3, p5
+    //OSCILLATORS
+    
+        aGrain1 poscil aWindowEnv * iOsc1Vol, (p4 * iOsc1Semi * iOsc1Cent) + p8 + aFMOsc, iFn1, p5
+        aGrain2 poscil aWindowEnv * iOsc2Vol, (p4 * iOsc2Semi * iOsc2Cent) + p8 + aFMOsc, iFn2, p5
+        aGrain3 poscil aWindowEnv * iOsc3Vol, (p4 * iOsc3Semi * iOsc3Cent) + p8 + aFMOsc, iFn3, p5
         
         iAmpEnv = p7
         iAmpLfo = p11
         aGrainSum = (aGrain1 + aGrain2 + aGrain3) * iAmpEnv * iAmpLfo
 
-    //MODULATION
-        //RM
+    //RING MODULATION
         iRMFreq = cent(iRMFreq)
         aRMOsc poscil 1, (iRMFreq * gkFreqTotal) + p13
     
-        aRingModSig ntrpol aGrainSum, aRMOsc * aGrainSum, iRMAmp * p12
-    
-        //AM
-        iAMFreq = cent(iAMFreq)
-        aAMOsc poscil 0.5, (iAMFreq * gkFreqTotal) + p13
-        aAMOsc += 0.5
-     
-        aAmpModSig ntrpol aGrainSum, aAMOsc * aGrainSum, iAMAmp * p12
+        aRingModSig ntrpol aGrainSum, aRMOsc * aGrainSum, iRMAmp + iModAmpLfo
+        ;printk 0.01, iModAmpLfo
 
-        //MOD SUM
-        aGrainMod = aRingModSig * aAmpModSig
-   
     //FILTERING:   
         kFilterEnvTotal ntrpol 20, 20000, p9
 
@@ -466,10 +466,10 @@ instr Synthesis
               
         //Filter type selection
         if giFilterType == 2 then
-            aSigFilter butterbp aGrainMod, kFilterFreqTotal, gkFilterBW
+            aSigFilter butterbp aRingModSig, kFilterFreqTotal, gkFilterBW
         else
             gkFilterReson limit gkFilterReson, 1, 50
-            aSigFilter bqrez aGrainMod, kFilterFreqTotal, gkFilterReson, giFilterType  
+            aSigFilter bqrez aRingModSig, kFilterFreqTotal, gkFilterReson, giFilterType  
         endif
 
     //Random Pan Position
