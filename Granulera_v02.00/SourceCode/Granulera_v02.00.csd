@@ -96,45 +96,45 @@ hslider bounds(976, 615, 180, 29) range(0, 1, 0, 1, 0.01) channel("DelayFeedback
 label bounds(744, 230, 70, 18) fontColour(255, 255, 255, 255) text("L F O")
 
 label bounds(636, 270, 110, 14) fontColour(255, 255, 255, 255) text("Grain Duration")
-rslider bounds(694, 294, 80, 56) range(0, 0.7, 0, 0.5, 0.01) text("Amount") channel("LfoDurRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(694, 294, 80, 56) range(0, 0.7, 0, 0.5, 0.01) text("Depth") channel("LfoDurRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 rslider bounds(614, 294, 80, 56) range(0, 15, 0, 0.5, 0.01) text("Frequency") channel("LfoDurFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 label bounds(818, 270, 111, 14) fontColour(255, 255, 255, 255) text("Grain Density")
-rslider bounds(872, 294, 80, 56) range(0, 100, 0, 0.5, 0.01) text("Amount") channel("LfoDensityRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(872, 294, 80, 56) range(0, 100, 0, 0.5, 0.01) text("Depth") channel("LfoDensityRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 rslider bounds(792, 294, 80, 56) range(0, 15, 0, 0.5, 0.01) text("Frequency") channel("LfoDensityFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 label bounds(630, 370, 131, 14) fontColour(255, 255, 255, 255) text("Filter Frequency")
-rslider bounds(694, 394, 80, 56) range(0, 0.5, 0, 1, 0.01) text("Amount") channel("LfoFilterRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(694, 394, 80, 56) range(0, 0.5, 0, 1, 0.01) text("Depth") channel("LfoFilterRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 rslider bounds(614, 394, 80, 56) range(0, 15, 0, 0.5, 0.01) text("Frequency") channel("LfoFilterFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 label bounds(828, 370, 91, 14) fontColour(255, 255, 255, 255) text("Amplitude")
-rslider bounds(872, 394, 80, 56) range(0, 0.5, 0, 1, 0.01) text("Amount") channel("LfoAmpRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(872, 394, 80, 56) range(0, 0.5, 0, 1, 0.01) text("Depth") channel("LfoAmpRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 rslider bounds(792, 394, 80, 56) range(0, 15, 0, 0.5, 0.01) text("Frequency") channel("LfoAmpFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 label bounds(632, 470, 133, 14) fontColour(255, 255, 255, 255) text("Panning")
-rslider bounds(694, 494, 80, 56) range(0, 0.5, 0, 1, 0.01) text("Amount") channel("LfoPanRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(694, 494, 80, 56) range(0, 0.5, 0, 1, 0.01) text("Depth") channel("LfoPanRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 rslider bounds(614, 494, 80, 56) range(0, 15, 0, 0.5, 0.01) text("Frequency") channel("LfoPanFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 label bounds(814, 470, 115, 14) fontColour(255, 255, 255, 255) text("Tuning")
-rslider bounds(872, 494, 80, 56) range(0, 1200, 0, 0.35, 0.01) text("Amount") channel("LfoTuningRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(872, 494, 80, 56) range(0, 1200, 0, 0.35, 0.01) text("Depth") channel("LfoTuningRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 rslider bounds(792, 494, 80, 56) range(0, 15, 0, 0.5, 0.01) text("Frequency") channel("LfoTuningFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 label bounds(620, 570, 151, 14) fontColour(255, 255, 255, 255) text("Modulation Tuning")
-rslider bounds(694, 594, 80, 56) range(0, 5000, 0, 0.5, 1) text("Amount") channel("LfoModFreqRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-rslider bounds(614, 592, 80, 56) range(0, 15, 0, 1, 0.01) text("Frequency") channel("LfoModFreqFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(694, 594, 80, 56) range(0, 5000, 0, 0.5, 1) text("Depth") channel("LfoModFreqRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(614, 594, 80, 56) range(0, 15, 0, 0.5, 0.01) text("Frequency") channel("LfoModFreqFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 label bounds(804, 570, 140, 14) fontColour(255, 255, 255, 255) text("Modulation Amount")
-rslider bounds(872, 594, 80, 56) range(0, 1, 0, 1, 0.01) text("Amount") channel("LfoModAmpRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-rslider bounds(792, 592, 80, 56) range(0, 15, 0, 1, 0.01) text("Frequency") channel("LfoModAmpFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(872, 594, 80, 56) range(0, 0.5, 0, 1, 0.01) text("Depth") channel("LfoModAmpRange") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(792, 594, 80, 56) range(0, 15, 0, 0.5, 0.01) text("Frequency") channel("LfoModAmpFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 //MODULATION
 label bounds(696, 75, 203, 18) fontColour(255, 255, 255, 255) text("M O D U L A T I O N")
 label bounds(654, 109, 83, 15) fontColour(255, 255, 255, 255) text("Ring")
-rslider bounds(614, 133, 80, 56) range(-3600, 3600, 0, 1, 1) text("Tuning") channel("RMFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(614, 130, 80, 56) range(-3600, 3600, 0, 1, 10) text("Tuning") channel("RMFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 rslider bounds(694, 133, 80, 56) range(0, 1, 0, 1, 0.01) text("Amount") channel("RMAmp") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 label bounds(832, 108, 83, 15) fontColour(255, 255, 255, 255) text("Frequency") channel("label132")
 rslider bounds(792, 132, 80, 56) range(0, 10000, 0, 0.5, 1) text("Tuning") channel("FMFreq") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-rslider bounds(872, 132, 80, 56) range(0, 10000, 0, 0.5, 0.01) text("Amount") channel("FMAmp") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+rslider bounds(872, 132, 80, 56) range(0, 1, 0, 0.5, 0.01) text("Amount") channel("FMAmp") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 //GLOBALS
 label bounds(1024, 20, 103, 18) fontColour(255, 255, 255, 255) text("GLOBAL")
@@ -164,9 +164,6 @@ image bounds(600, 210, 360, 2) channel("image10000") colour(188, 151, 49, 255)
 -n -+rtmidi=NULL -M0 -dm0
 </CsOptions>
 <CsInstruments>
-//TODO
-//Fix pitch bend not resting at 0
-//Double check LFO behaviour
 
 ksmps = 32
 nchnls = 2
@@ -176,11 +173,11 @@ seed 0
 massign 0, "Trigger"
 
 //Waveforms
-giSine ftgen 1, 0, 4096, 10, 1
-giTriangle ftgen 2,0, 4096, 9, 1, 1, 0, 3, .333, 180, 5, .2, 0, 7, .143, 180, 9, .111, 0
-giSaw ftgen 3, 0, 4096, 10, 1, .5, .333, .25, .2, .166, .143, .125, .111, .1, .0909, .0833, .077
-giSquare ftgen 4, 0, 4096, 10, 1, 0, .333, 0, .2, 0, .143, 0, .111, 0, .0909, 0, .077, 0, .0666, 0, .0588
-giPulse ftgen 5, 0, 4096, 10, 1, 1, 1, 1, 0.7, 0.5, 0.3, 0.1
+giSine ftgen 1, 0, 8192, 10, 1
+giTriangle ftgen 2,0, 8192, 9, 1, 1, 0, 3, .333, 180, 5, .2, 0, 7, .143, 180, 9, .111, 0
+giSaw ftgen 3, 0, 8192, 10, 1, .5, .333, .25, .2, .166, .143, .125, .111, .1, .0909, .0833, .077
+giSquare ftgen 4, 0, 8192, 10, 1, 0, .333, 0, .2, 0, .143, 0, .111, 0, .0909, 0, .077, 0, .0666, 0, .0588
+giPulse ftgen 5, 0, 8192, 10, 1, 1, 1, 1, 0.7, 0.5, 0.3, 0.1
 
 //Windowing
 giWfn9 ftgen 11, 0, 16384, 20, 9 //Sync window
@@ -228,7 +225,7 @@ instr Trigger
         kLfoDurRange    chnget "LfoDurRange"
         kLfoDurFreq     chnget "LfoDurFreq"
     
-        kDurVar     jitter  kDurVarRange, .2 * kDurVarRate, 1 * kDurVarRate
+        kDurVar     jitter  kDurVarRange, .2 * kDurVarRate, .5 * kDurVarRate
         kLfoDur     lfo     kLfoDurRange, kLfoDurFreq
         kDurTotal   limit   kDur + kDurVar + kLfoDur , 0.01, 1
     
@@ -241,8 +238,8 @@ instr Trigger
         kLfoDensityFreq     chnget "LfoDensityFreq"
     
         kLfoDensity     lfo     kLfoDensityRange, kLfoDensityFreq 
-        kDensityVar     jitter  kDensityVarRange, .2 * kDensityVarRate, 1 * kDensityVarRate
-        kDensityTotal   limit   kDensity + kDensityVar + kLfoDensity, 0.5, 80
+        kDensityVar     jitter  kDensityVarRange, .2 * kDensityVarRate, .5 * kDensityVarRate
+        kDensityTotal   limit   kDensity + kDensityVar + kLfoDensity, 0.1, 80
         
         kTrig metro kDensityTotal
     
@@ -267,7 +264,7 @@ instr Trigger
         kPitchVar       rand kPitchVar
         kGlobalTuning = cent(kGlobalTuning)
     
-        kFreqVar jitter kFreqVarRange, .2 * kFreqVarRate, 1 * kFreqVarRate
+        kFreqVar jitter kFreqVarRange, .2 * kFreqVarRate, .5 * kFreqVarRate
         gkFreqTotal = ((kFreqMIDI + kFreqVar) * kGlobalTuning)
     
     //Spatialization
@@ -355,7 +352,7 @@ instr Trigger
         kLfoModFreqFreq chnget "LfoModFreqFreq"
         
         kModAmpLfo lfo kLfoModAmpRange, kLfoModAmpFreq
-        ;kModAmpLfo += 0.5
+        kModAmpLfo += 0.5
         kModFreqLfo lfo kLfoModFreqRange, kLfoModFreqFreq
         
     ///Pan LFO
@@ -367,16 +364,14 @@ instr Trigger
         kPanic chnget "Panic"
      if kPanic == 1 then  
         turnoff 
-     endif
-     
+     else
     //Granulation 
         schedkwhen kTrig, 0, 0, "Synthesis", 0, kDurTotal, gkFreqTotal + kPitchVar, abs(kPhaseVar), kRandomSpread, kAmpEnv, kLfoTuning, kFilterFreqSum, kLfoFilter, kAmpLfo, kModAmpLfo, kModFreqLfo, kPanLfo 
         ;                                          p3            p4                      p5              p6          p7          p8          p9          p10        p11        p12          p13         p14   
+    endif
 endin
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 instr Synthesis
-        ;iPitchBend = cent(p15)
-
     //Oscillator1
         iOsc1Vol    chnget "Oscillator1Volume"
         iOsc1Semi   chnget "Oscillator1Semitone"
@@ -405,8 +400,7 @@ instr Synthesis
         iOsc3Cent = cent(iOsc3Cent)
     
     //Windowing      
-        iWfn chnget "WindowingSelection"
-        iWfn += 10
+        iWfn = chnget:i("WindowingSelection") + 10
         
         kWindowIndex line 0, p3, 1
         kWindowEnv table kWindowIndex, iWfn, 1 
@@ -424,10 +418,11 @@ instr Synthesis
         
     //FREQUENCY MODULATION
         iModAmpLfo = p12
-        aFMOsc poscil iFMAmp + iModAmpLfo, iFMFreq + abs(p13 * 2)
+        iModFreqLfo = p13
+        iFMAmpInterpol ntrpol 0, 20000, iFMAmp
+        aFMOsc poscil iFMAmpInterpol * iModAmpLfo, iFMFreq + abs(iModFreqLfo * 2)
 
-    //OSCILLATORS
-    
+    //OSCILLATORS   
         aGrain1 poscil aWindowEnv * iOsc1Vol, (p4 * iOsc1Semi * iOsc1Cent) + p8 + aFMOsc, iFn1, p5
         aGrain2 poscil aWindowEnv * iOsc2Vol, (p4 * iOsc2Semi * iOsc2Cent) + p8 + aFMOsc, iFn2, p5
         aGrain3 poscil aWindowEnv * iOsc3Vol, (p4 * iOsc3Semi * iOsc3Cent) + p8 + aFMOsc, iFn3, p5
@@ -438,22 +433,21 @@ instr Synthesis
 
     //RING MODULATION
         iRMFreq = cent(iRMFreq)
-        aRMOsc poscil 1, (iRMFreq * gkFreqTotal) + p13
+        aRMOsc poscil 1, (iRMFreq * gkFreqTotal) + iModFreqLfo
     
-        aRingModSig ntrpol aGrainSum, aRMOsc * aGrainSum, iRMAmp + iModAmpLfo
-        ;printk 0.01, iModAmpLfo
+        aRingModSig ntrpol aGrainSum, aRMOsc * aGrainSum, iRMAmp * iModAmpLfo * 2
 
     //FILTERING:   
-        kFilterEnvTotal ntrpol 20, 20000, p9
+        iFilterEnvTotal ntrpol 20, 20000, p9
 
         //Frequency offset        
         if gkFilterNoteTracking == 0 then
-            kFilterFreqTotal =  kFilterEnvTotal
+            kFilterFreqTotal =  iFilterEnvTotal
             if gkLfoFilterFreq > 0 then
                 kFilterFreqTotal *= p10
             endif
         else
-            kFilterFreqTotal =  kFilterEnvTotal + gkFreqTotal ;kFreqTotal = cpsmidi + global cent tuning + frequency randomization
+            kFilterFreqTotal =  iFilterEnvTotal + gkFreqTotal ;kFreqTotal = cpsmidi + global cent tuning + frequency randomization
             if gkLfoFilterFreq > 0 then
                 kFilterFreqTotal *= p10
             endif
