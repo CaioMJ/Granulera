@@ -158,7 +158,6 @@ image bounds(237, 55, 725, 2) channel("image10000") colour(188, 151, 49, 255)
 image bounds(237, 410, 363, 2) channel("image10000") colour(188, 151, 49, 255)
 image bounds(600, 210, 360, 2) channel("image10000") colour(188, 151, 49, 255)
 
-
 </Cabbage>
 <CsoundSynthesizer>
 <CsOptions>
@@ -166,6 +165,7 @@ image bounds(600, 210, 360, 2) channel("image10000") colour(188, 151, 49, 255)
 </CsOptions>
 <CsInstruments>
 //TODO
+//Fix pitch bend not resting at 0
 //Double check LFO behaviour
 
 ksmps = 32
@@ -251,11 +251,8 @@ instr Trigger
         kPhaseVar rand kPhaseVar
 
     //Pitch
-        iPitchBendValue chnget "PitchBend"
-        iPitchBendValueOffset = 2    
-        kPitchBend pchbend (-iPitchBendValue + iPitchBendValueOffset)/2, (iPitchBendValue + iPitchBendValueOffset) / 2
-                
-        iFreqMIDI       cpsmidi
+        iPitchBendValue chnget "PitchBend"                
+        kFreqMIDI       cpsmidib iPitchBendValue
         kPitchVar       chnget "PitchVariation"
         
         kFreqVarRange   chnget "FrequencyVariationRange"
@@ -271,7 +268,7 @@ instr Trigger
         kGlobalTuning = cent(kGlobalTuning)
     
         kFreqVar jitter kFreqVarRange, .2 * kFreqVarRate, 1 * kFreqVarRate
-        gkFreqTotal = ((iFreqMIDI + kFreqVar) * kGlobalTuning)
+        gkFreqTotal = ((kFreqMIDI + kFreqVar) * kGlobalTuning)
     
     //Spatialization
         kGrainSpread chnget "GrainSpread"
@@ -373,8 +370,8 @@ instr Trigger
      endif
      
     //Granulation 
-        schedkwhen kTrig, 0, 0, "Synthesis", 0, kDurTotal, gkFreqTotal + kPitchVar, abs(kPhaseVar), kRandomSpread, kAmpEnv, kLfoTuning, kFilterFreqSum, kLfoFilter, kAmpLfo, kModAmpLfo, kModFreqLfo, kPanLfo, kPitchBend 
-        ;                                          p3            p4                      p5              p6          p7          p8          p9          p10        p11        p12          p13         p14     p15
+        schedkwhen kTrig, 0, 0, "Synthesis", 0, kDurTotal, gkFreqTotal + kPitchVar, abs(kPhaseVar), kRandomSpread, kAmpEnv, kLfoTuning, kFilterFreqSum, kLfoFilter, kAmpLfo, kModAmpLfo, kModFreqLfo, kPanLfo 
+        ;                                          p3            p4                      p5              p6          p7          p8          p9          p10        p11        p12          p13         p14   
 endin
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 instr Synthesis
@@ -386,7 +383,7 @@ instr Synthesis
         iOsc1Cent   chnget "Oscillator1Cents"
         iFn1        chnget "WaveformSelection1"
     
-        iOsc1Semi = semitone(iOsc1Semi + p15)
+        iOsc1Semi = semitone(iOsc1Semi)
         iOsc1Cent = cent(iOsc1Cent)
     
     //Oscillator2
@@ -395,7 +392,7 @@ instr Synthesis
         iOsc2Cent   chnget "Oscillator2Cents"  
         iFn2        chnget "WaveformSelection2"
    
-        iOsc2Semi = semitone(iOsc2Semi + p15)
+        iOsc2Semi = semitone(iOsc2Semi)
         iOsc2Cent = cent(iOsc2Cent)
     
     //Oscillator3
@@ -404,7 +401,7 @@ instr Synthesis
         iOsc3Cent   chnget "Oscillator3Cents"
         iFn3        chnget "WaveformSelection3"
    
-        iOsc3Semi = semitone(iOsc3Semi + p15)
+        iOsc3Semi = semitone(iOsc3Semi)
         iOsc3Cent = cent(iOsc3Cent)
     
     //Windowing      
