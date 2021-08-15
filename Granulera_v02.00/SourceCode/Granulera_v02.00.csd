@@ -10,7 +10,6 @@ filebutton bounds(806, 12, 64, 32) text("Delete", "Delete") mode("remove preset"
 
 label bounds(12, 595, 116, 14) channel("label10114") text("Pitch Bend Range") fontColour(255, 255, 255, 255) 
 nslider bounds(160, 588, 55, 26) channel("PitchBend") range(1, 24, 2, 1, 1) colour(0, 0, 0, 255) textColour(188, 151, 49, 255) trackerColour(0, 0, 0, 0) fontColour(188, 151, 49, 255)
-
 button bounds(160, 625, 55, 32) text("PANIC", "PANIC") channel("Panic") colour:1(255, 0, 0, 255) outlineThickness(2) outlineColour(255, 0, 0, 255)
 button bounds(11, 625, 118, 32) channel("VelocityButton") text("Velocity Disabled", "Velocity Enabled") colour:1(188, 151, 49, 255) outlineThickness(2) outlineColour(188, 151, 49, 255)
 
@@ -78,21 +77,6 @@ rslider bounds(328, 594, 80, 56) range(0.01, 10.01, 0.01, 0.5, 0.01) text("Decay
 rslider bounds(412, 594, 80, 56) range(0.01, 1.01, 1, 0.5, 0.001) text("Sustain") channel("FilterSustain") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 rslider bounds(494, 594, 80, 56) range(0.01, 10.01, 0.1, 0.5, 0.01) text("Release") channel("FilterRelease") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
-//EFFECTS
-label bounds(976, 330, 67, 18) fontColour(255, 255, 255, 255) text("REVERB")
-button bounds(1080, 326, 81, 25)  channel("ReverbBypass") text("Off", "On")    colour:1(188, 151, 49, 255) value(1) outlineThickness(2) outlineColour(188, 151, 49, 255)
-hslider bounds(976, 354, 180, 29) range(0, 1, 1, 1, 0.01) channel("ReverbSend") text("Send") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(976, 384, 180, 29) range(0, 1, 0, 1, 0.01) channel("ReverbMix") text("Mix") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(976, 414, 180, 29) range(0, 0.9, 0.4, 1, 0.01) channel("ReverbSize") text("Size") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-
-label bounds(976, 470, 52, 18) fontColour(255, 255, 255, 255) text("DELAY")
-button bounds(1080, 466, 81, 25)  channel("DelayBypass") text("Off", "On")    colour:1(188, 151, 49, 255) value(0) outlineThickness(2) outlineColour(188, 151, 49, 255)
-hslider bounds(976, 495, 180, 29) range(0, 1, 0, 1, 0.01) channel("DelaySend") text("Send") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(976, 525, 180, 29) range(0, 1, 1, 1, 0.01) channel("DelayMix") text("Mix") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(976, 555, 180, 29) range(0.05, 10, 0, 0.4, 0.01) channel("DelayTimeLeft") text("Time Left") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(976, 585, 180, 29) range(0.05, 10, 0, 0.4, 0.01) channel("DelayTimeRight") text("Time Right") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-hslider bounds(976, 615, 180, 29) range(0, 1, 0, 1, 0.01) channel("DelayFeedback") text("Feedback") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
-
 //LFO
 label bounds(744, 230, 70, 18) fontColour(255, 255, 255, 255) text("L F O")
 
@@ -150,6 +134,21 @@ hslider bounds(976, 183, 180, 29) range(0.01, 10, 0.1, 0.5, 0.01) text("Attack")
 hslider bounds(976, 213, 180, 29) range(0.01, 10, 0.1, 0.5, 0.01) text("Decay") channel("AmpDecay") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 hslider bounds(976, 243, 180, 29) range(0.0001, 1, 1, 1, 0.01) text("Sustain") channel("AmpSustain") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 hslider bounds(976, 273, 180, 29) range(0.01, 10, 0.4, 1, 0.01) text("Release") channel("AmpRelease") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+
+//EFFECTS
+label bounds(976, 330, 67, 18) fontColour(255, 255, 255, 255) text("REVERB")
+button bounds(1080, 326, 81, 25)  channel("ReverbBypass") text("Off", "On")    colour:1(188, 151, 49, 255) value(1) outlineThickness(2) outlineColour(188, 151, 49, 255)
+hslider bounds(976, 354, 180, 29) range(0, 1, 1, 1, 0.01) channel("ReverbSend") text("Send") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(976, 384, 180, 29) range(0, 1, 0, 1, 0.01) channel("ReverbMix") text("Mix") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(976, 414, 180, 29) range(0, 0.9, 0.4, 1, 0.01) channel("ReverbSize") text("Size") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+
+label bounds(976, 470, 52, 18) fontColour(255, 255, 255, 255) text("DELAY")
+button bounds(1080, 466, 81, 25)  channel("DelayBypass") text("Off", "On")    colour:1(188, 151, 49, 255) value(0) outlineThickness(2) outlineColour(188, 151, 49, 255)
+hslider bounds(976, 495, 180, 29) range(0, 1, 0, 1, 0.01) channel("DelaySend") text("Send") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(976, 525, 180, 29) range(0, 1, 1, 1, 0.01) channel("DelayMix") text("Mix") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(976, 555, 180, 29) range(0.05, 10, 0, 0.4, 0.01) channel("DelayTimeLeft") text("Time Left") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(976, 585, 180, 29) range(0.05, 10, 0, 0.4, 0.01) channel("DelayTimeRight") text("Time Right") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
+hslider bounds(976, 615, 180, 29) range(0, 1, 0, 1, 0.01) channel("DelayFeedback") text("Feedback") trackerColour(188, 151, 49, 255) textColour(255, 255, 255, 255)
 
 //GRAPHIC LINES
 //Vertical

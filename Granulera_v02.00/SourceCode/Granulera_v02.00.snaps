@@ -1489,7 +1489,7 @@
         "DurationVariationRange": 0.040000006556510925,
         "DurationVariationRate": 8.109999656677246,
         "GrainDensity": 20.500001907348633,
-        "DensityVariationRange": 8.810001373291016,
+        "DensityVariationRange": 8.810002326965332,
         "DensityVariationRate": 6.610000133514404,
         "PhaseVariation": 1.0,
         "label63": 0.0,
@@ -1537,8 +1537,8 @@
         "LfoTuningRange": 0.0,
         "LfoTuningFreq": 0.0,
         "label121": 0.0,
-        "LfoModFreqRange": 350.0,
-        "LfoModFreqFreq": 0.0,
+        "LfoModFreqRange": 667.0000610351563,
+        "LfoModFreqFreq": 0.1300000101327896,
         "label125": 0.0,
         "LfoModAmpRange": 0.0,
         "LfoModAmpFreq": 0.0,
@@ -1559,6 +1559,17 @@
         "AmpDecay": 0.09999997913837433,
         "AmpSustain": 1.0,
         "AmpRelease": 0.4000000059604645,
-        "image10000": 0.0
+        "image10000": 0.0,
+        "label82": 0.0,
+        "label90": 0.0,
+        "label94": 0.0,
+        "label98": 0.0,
+        "label102": 0.0,
+        "label106": 0.0,
+        "label110": 0.0,
+        "label115": 0.0,
+        "label116": 0.0,
+        "label124": 0.0,
+        "label138": 0.0
     }
 }
